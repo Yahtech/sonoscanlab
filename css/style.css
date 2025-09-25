@@ -1,4 +1,295 @@
 /********** Template CSS **********/
+ .contact-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .stats-container {
+            background: #1a76d1;
+            border-radius: 10px;
+            padding: 30px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience {
+            margin-bottom: 25px;
+        }
+        
+        .experience:last-child {
+            margin-bottom: 0;
+        }
+        
+        .progress {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .section-title {
+            color: #1a76d1;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .stats-container {
+                padding: 20px;
+            }
+        }
+.blog-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><path d="M30,30 Q50,10 70,30 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z" fill="%231a76d1"/></svg>');
+            z-index: 0;
+        }
+        
+        .blog-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 50px;
+        }
+        
+        .blog-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a76d1;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .blog-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #1a76d1;
+            border-radius: 2px;
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-card-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-card-img img {
+            transform: scale(1.05);
+        }
+        
+        .blog-card-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #1a76d1;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .blog-card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 220px);
+        }
+        
+        .blog-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a76d1;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .blog-card-excerpt {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .blog-card-meta i {
+            margin-right: 5px;
+            color: #1a76d1;
+        }
+        
+        .blog-card-meta span {
+            margin-right: 15px;
+        }
+        
+        .blog-card-btn {
+            background: #1a76d1;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+        }
+        
+        .blog-card-btn:hover {
+            background: #155a9e;
+            transform: translateX(5px);
+        }
+        
+        .blog-card-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card-btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Carousel Styles for Mobile */
+        .blog-carousel .carousel-item {
+            padding: 0 15px;
+        }
+        
+        .blog-carousel .carousel-control-prev,
+        .blog-carousel .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background: #1a76d1;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.9;
+        }
+        
+        .blog-carousel .carousel-control-prev {
+            left: 10px;
+        }
+        
+        .blog-carousel .carousel-control-next {
+            right: 10px;
+        }
+        
+        .blog-carousel .carousel-control-prev:hover,
+        .blog-carousel .carousel-control-next:hover {
+            opacity: 1;
+        }
+        
+        /* View All Button */
+        .view-all-container {
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .view-all-btn {
+            background: transparent;
+            color: #1a76d1;
+            border: 2px solid #1a76d1;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .view-all-btn:hover {
+            background: #1a76d1;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 118, 209, 0.3);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .blog-section {
+                padding: 60px 0;
+            }
+            
+            .blog-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .blog-card {
+                margin-bottom: 30px;
+            }
+        }
  /* Custom scrollbar for the sidebar */
         .service-list-container::-webkit-scrollbar {
             width: 8px;
