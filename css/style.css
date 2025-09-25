@@ -1,4 +1,36 @@
 /********** Template CSS **********/
+.service-link {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .service-link.active {
+            background-color: #3b82f6;
+            color: white;
+            border-radius: 0.5rem;
+        }
+        .service-link:not(.active):hover {
+            background-color: #e5e7eb;
+        }
+
+        .shadow-custom {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Custom scrollbar for the sidebar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
 
 /* Custom CSS to match the image design */
     .blog-card {
