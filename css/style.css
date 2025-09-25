@@ -1,4 +1,25 @@
 /********** Template CSS **********/
+ /* Custom scrollbar for the sidebar */
+        .service-list-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .service-list-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .service-list-container::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 4px;
+        }
+        .service-list-container::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        /* Custom styles to replace Tailwind classes */
+        .border-custom-gray {
+            border-color: #e5e7eb;
+        }
+        .max-w-2xl {
+            max-width: 42rem;
+        }
 .service-link {
             transition: all 0.2s ease-in-out;
             cursor: pointer;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Labsky - Laboratory HTML Website Template</title>
+    <title>Sonoscan - Lab</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,6 +30,144 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Custom Styles for Services Page */
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .services-container {
+            padding: 80px 0;
+        }
+        
+        .services-sidebar {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .services-sidebar h3 {
+            color: #1a76d1;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1a76d1;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-list li {
+            margin-bottom: 10px;
+        }
+        
+        .service-list a {
+            display: block;
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .service-list a:hover, .service-list a.active {
+            background-color: #1a76d1;
+            color: white;
+        }
+        
+        .service-content {
+            padding-left: 40px;
+        }
+        
+        .service-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-title {
+            color: #1a76d1;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .service-description {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .service-features {
+            margin-top: 30px;
+        }
+        
+        .service-features h4 {
+            color: #1a76d1;
+            margin-bottom: 15px;
+        }
+        
+        .service-features ul {
+            padding-left: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .service-cta {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #1a76d1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .service-cta:hover {
+            background-color: #155a9e;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .services-sidebar {
+                margin-bottom: 40px;
+                position: relative;
+                top: 0;
+            }
+            
+            .service-content {
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .services-hero {
+                padding: 60px 0;
+            }
+            
+            .services-container {
+                padding: 40px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -46,15 +184,9 @@
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div>
-                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-                    <small class="me-3"><i class="fa fa-clock me-2"></i>Mon-Sat 09am-5pm, Sun Closed</small>
+                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>Sonoscan Abuja</small>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>24hrs Services</small>
                 </div>
-                <nav class="breadcrumb mb-0">
-                    <a class="breadcrumb-item small text-body" href="#">Career</a>
-                    <a class="breadcrumb-item small text-body" href="#">Support</a>
-                    <a class="breadcrumb-item small text-body" href="#">Terms</a>
-                    <a class="breadcrumb-item small text-body" href="#">FAQs</a>
-                </nav>
             </div>
         </div>
     </div>
@@ -69,15 +201,15 @@
                     <i class="bi bi-telephone-inbound fs-2"></i>
                     <div class="ms-3">
                         <h5 class="text-white mb-0">Call Now</h5>
-                        <span>+012 345 6789</span>
+                        <span>+23412345678</span>
                     </div>
                 </div>
-                <a href="index.html" class="h1 text-white mb-0">Lab<span class="text-dark">sky</span></a>
+                <a href="index.html" class="h1 text-white mb-0">Sonoscan<span class="text-dark">Lab</span></a>
                 <div class="d-flex">
                     <i class="bi bi-envelope fs-2"></i>
                     <div class="ms-3">
                         <h5 class="text-white mb-0">Mail Now</h5>
-                        <span>info@example.com</span>
+                        <span>info@sonoscanlab.ng</span>
                     </div>
                 </div>
             </div>
@@ -87,11 +219,11 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top">
+     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand d-lg-none">
-                    <h1 class="text-primary m-0">Lab<span class="text-dark">sky</span></h1>
+                    <h1 class="text-primary m-0">Sonoscan<span class="text-dark">Lab</span></h1>
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -101,18 +233,15 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link active">Services</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="appoinment.html" class="dropdown-item">Appoinment</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
+                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="service.html" class="dropdown-item">Diagnostics Services</a>
+                            <a href="#" class="dropdown-item">Dr. Consultation</a>
+                            <a href="#" class="dropdown-item">Medical Check up Packages</a>
+
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link">Blog</a>
+                        <a href="#" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ms-auto d-none d-lg-flex">
                         <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -126,94 +255,166 @@
     </div>
     <!-- Navbar End -->
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5 mt-4">
-            <h1 class="display-2 text-white mb-3 animated slideInDown">Services</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Services</li>
-                </ol>
-            </nav>
+    <!-- Hero Section -->
+    <div class="services-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Our Medical Services</h1>
+            <p class="lead">Comprehensive healthcare solutions with cutting-edge technology and expert care</p>
         </div>
     </div>
-    <!-- Page Header End -->
 
-    
-    <!-- Service Start -->
-    <div class="container-fluid container-service py-5">
-        <div class="bg-white rounded-xl shadow-custom p-8 max-w-6xl w-full flex flex-col md:flex-row">
-        <!-- Sidebar for Services List -->
-        <div class="w-full md:w-1/3 pr-0 md:pr-8 mb-6 md:mb-0 border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto max-h-[80vh]">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Services</h2>
-            <nav id="service-list">
-                <!-- Service links will be dynamically generated here -->
-            </nav>
-        </div>
-
-        <!-- Main Content Area -->
-        <div class="w-full md:w-2/3 pl-0 md:pl-8">
-            <div class="flex flex-col items-center">
-                <img id="service-image" src="https://placehold.co/800x400/3b82f6/FFFFFF?text=Select+a+Service" alt="Service Image" class="w-full rounded-lg shadow-md mb-6 object-cover" style="max-height: 400px;">
-                <h1 id="service-title" class="text-3xl sm:text-4xl font-extrabold text-center mb-4 text-gray-900">Choose a service from the left</h1>
-                <p id="service-description" class="text-gray-600 text-center leading-relaxed max-w-2xl">
-                    Select a service from the sidebar to view its details, including a brief description and a representative image.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5">
-        <div class="container pt-5">
-            <div class="row gy-5 gx-0">
-                <div class="col-lg-6 pe-lg-5 wow fadeIn" data-wow-delay="0.3s">
-                    <h1 class="display-6 text-white mb-4">What Clients Say About Our Lab Services!</h1>
-                    <p class="text-white mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-                    <a href="" class="btn btn-primary py-3 px-5">More Testimonials</a>
+    <!-- Services Section Start -->
+    <div class="container services-container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="services-sidebar">
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li><a href="#diagnostics" class="active" data-service="diagnostics">Diagnostics Services</a></li>
+                        <li><a href="#consultation" data-service="consultation">Dr. Consultation</a></li>
+                        <li><a href="#checkup" data-service="checkup">Medical Check-up Packages</a></li>
+                        <li><a href="#ultrasound" data-service="ultrasound">Ultrasound Scanning</a></li>
+                        <li><a href="#laboratory" data-service="laboratory">Laboratory Tests</a></li>
+                        <li><a href="#cardiology" data-service="cardiology">Cardiology Services</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-6 mb-n5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="bg-white p-5">
-                        <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.1s">
-                            <div class="testimonial-item">
-                                <div class="icon-box-primary mb-4">
-                                    <i class="bi bi-chat-left-quote text-dark"></i>
-                                </div>
-                                <p class="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
-                                <div class="d-flex align-items-center">
-                                    <img class="flex-shrink-0" src="img/testimonial-1.jpg" alt="">
-                                    <div class="ps-3">
-                                        <h5 class="mb-1">Client Name</h5>
-                                        <span class="text-primary">Profession</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="icon-box-primary mb-4">
-                                    <i class="bi bi-chat-left-quote text-dark"></i>
-                                </div>
-                                <p class="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus. Pellentesque eu consequat augue.</p>
-                                <div class="d-flex align-items-center">
-                                    <img class="flex-shrink-0" src="img/testimonial-2.jpg" alt="">
-                                    <div class="ps-3">
-                                        <h5 class="mb-1">Client Name</h5>
-                                        <span class="text-primary">Profession</span>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="col-lg-8">
+                <div class="service-content">
+                    <!-- Diagnostics Services -->
+                    <div id="diagnostics" class="service-item active">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Diagnostics Services" class="service-image">
+                        <h2 class="service-title">Diagnostics Services</h2>
+                        <p class="service-description">
+                            At Sonoscan Lab, we provide comprehensive diagnostic services using state-of-the-art technology to ensure accurate and timely results. Our diagnostics department is equipped with the latest imaging and testing equipment operated by highly skilled professionals.
+                        </p>
+                        <div class="service-features">
+                            <h4>Our Diagnostic Services Include:</h4>
+                            <ul>
+                                <li>Advanced Imaging (MRI, CT Scan, X-Ray)</li>
+                                <li>Laboratory Testing and Analysis</li>
+                                <li>Pathology Services</li>
+                                <li>Electrocardiogram (ECG)</li>
+                                <li>Pulmonary Function Tests</li>
+                                <li>Endoscopy and Colonoscopy</li>
+                            </ul>
                         </div>
+                        <!-- <button class="service-cta">Schedule an Appointment</button> -->
+                    </div>
+                    
+                    <!-- Dr. Consultation -->
+                    <div id="consultation" class="service-item" style="display: none;">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Consultation" class="service-image">
+                        <h2 class="service-title">Dr. Consultation</h2>
+                        <p class="service-description">
+                            Our team of experienced and specialized doctors provides comprehensive medical consultations for various health concerns. We prioritize personalized care and take time to understand your unique health needs.
+                        </p>
+                        <div class="service-features">
+                            <h4>Consultation Services:</h4>
+                            <ul>
+                                <li>General Physician Consultation</li>
+                                <li>Specialist Referrals</li>
+                                <li>Follow-up Consultations</li>
+                                <li>Second Opinion Services</li>
+                                <li>Telemedicine Consultations</li>
+                                <li>Health Risk Assessments</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="service-cta">Book a Consultation</button> -->
+                    </div>
+                    
+                    <!-- Medical Check-up Packages -->
+                    <div id="checkup" class="service-item" style="display: none;">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Medical Check-up Packages" class="service-image">
+                        <h2 class="service-title">Medical Check-up Packages</h2>
+                        <p class="service-description">
+                            We offer comprehensive health check-up packages designed to meet different needs and age groups. Our packages are curated by medical experts to provide thorough health assessments and early detection of potential health issues.
+                        </p>
+                        <div class="service-features">
+                            <h4>Available Packages:</h4>
+                            <ul>
+                                <li>Basic Health Check-up</li>
+                                <li>Executive Health Package</li>
+                                <li>Women's Wellness Package</li>
+                                <li>Senior Citizen Health Package</li>
+                                <li>Corporate Health Packages</li>
+                                <li>Comprehensive Annual Check-up</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="service-cta">View Packages</button> -->
+                    </div>
+                    
+                    <!-- Additional services would follow the same pattern -->
+                    <!-- Ultrasound Scanning -->
+                    <div id="ultrasound" class="service-item" style="display: none;">
+                        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ultrasound Scanning" class="service-image">
+                        <h2 class="service-title">Ultrasound Scanning</h2>
+                        <p class="service-description">
+                            Our ultrasound department utilizes advanced imaging technology to provide detailed examinations of internal organs, blood vessels, and tissues. We offer a wide range of ultrasound services performed by certified sonographers.
+                        </p>
+                        <div class="service-features">
+                            <h4>Ultrasound Services:</h4>
+                            <ul>
+                                <li>Abdominal Ultrasound</li>
+                                <li>Obstetric Ultrasound (Pregnancy)</li>
+                                <li>Pelvic Ultrasound</li>
+                                <li>Doppler Studies</li>
+                                <li>Musculoskeletal Ultrasound</li>
+                                <li>Thyroid and Neck Ultrasound</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="service-cta">Schedule Ultrasound</button> -->
+                    </div>
+                    
+                    <!-- Laboratory Tests -->
+                    <div id="laboratory" class="service-item" style="display: none;">
+                        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratory Tests" class="service-image">
+                        <h2 class="service-title">Laboratory Tests</h2>
+                        <p class="service-description">
+                            Our state-of-the-art laboratory is equipped with automated analyzers and staffed by experienced technicians to provide accurate and timely test results. We follow strict quality control measures to ensure reliability.
+                        </p>
+                        <div class="service-features">
+                            <h4>Laboratory Services:</h4>
+                            <ul>
+                                <li>Blood Tests (CBC, Biochemistry)</li>
+                                <li>Urine and Stool Analysis</li>
+                                <li>Hormone Testing</li>
+                                <li>Infectious Disease Testing</li>
+                                <li>Cancer Markers</li>
+                                <li>Genetic Testing</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="service-cta">Request Lab Test</button> -->
+                    </div>
+                    
+                    <!-- Cardiology Services -->
+                    <div id="cardiology" class="service-item" style="display: none;">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cardiology Services" class="service-image">
+                        <h2 class="service-title">Cardiology Services</h2>
+                        <p class="service-description">
+                            Our cardiology department offers comprehensive heart care with advanced diagnostic tools and treatment options. Our team of cardiologists provides personalized care for various heart conditions.
+                        </p>
+                        <div class="service-features">
+                            <h4>Cardiology Services:</h4>
+                            <ul>
+                                <li>Electrocardiogram (ECG)</li>
+                                <li>Echocardiography</li>
+                                <li>Stress Testing</li>
+                                <li>Holter Monitoring</li>
+                                <li>Cardiac Rehabilitation</li>
+                                <li>Preventive Cardiology</li>
+                            </ul>
+                        </div>
+                        <!-- <button class="service-cta">Cardiology Consultation</button> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
-
+    <!-- Services Section End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
@@ -221,12 +422,12 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="h1 text-primary mb-0">Lab<span class="text-white">sky</span></h1>
+                        <h1 class="h1 text-primary mb-0">Sonoscan<span class="text-white">Lab</span></h1>
                     </a>
-                    <p class="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-                    <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <p class="fs-5 mb-4">Your trusted partner in health and wellness, providing comprehensive medical services with cutting-edge technology and compassionate care.</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>Sonoscan, Abuja</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+234123456789</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@sonoscanlab.ng</p>
                     <div class="d-flex mt-4">
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -238,27 +439,17 @@
                     <div class="row g-5">
                         <div class="col-sm-6">
                             <h4 class="text-light mb-4">Quick Links</h4>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Our Services</a>
-                            <a class="btn btn-link" href="">Terms & Condition</a>
-                            <a class="btn btn-link" href="">Support</a>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                            <a class="btn btn-link" href="services.html">Our Services</a>
+                            <a class="btn btn-link" href="blog.html">Blog</a>
                         </div>
                         <div class="col-sm-6">
-                            <h4 class="text-light mb-4">Popular Links</h4>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Our Services</a>
-                            <a class="btn btn-link" href="">Terms & Condition</a>
-                            <a class="btn btn-link" href="">Support</a>
-                        </div>
-                        <div class="col-sm-12">
-                            <h4 class="text-light mb-4">Newsletter</h4>
-                            <div class="w-100">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
-                                </div>
-                            </div>
+                            <h4 class="text-light mb-4">Our Services</h4>
+                            <a class="btn btn-link" href="#diagnostics">Diagnostics</a>
+                            <a class="btn btn-link" href="#consultation">Consultation</a>
+                            <a class="btn btn-link" href="#checkup">Health Check-ups</a>
+                            <a class="btn btn-link" href="#ultrasound">Ultrasound</a>
                         </div>
                     </div>
                 </div>
@@ -273,11 +464,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
+                    <p class="mb-0">&copy; <a href="#">SonoScanLab</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    <p class="mb-0">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <p class="mb-0">Designed by <a href="https://phygital-15fn.vercel.app/">Phygital</a></p>
                 </div>
             </div>
         </div>
@@ -285,8 +476,8 @@
     <!-- Copyright End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a> -->
 
 
     <!-- JavaScript Libraries -->
@@ -300,6 +491,43 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <!-- Services Page JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Service navigation functionality
+            const serviceLinks = document.querySelectorAll('.service-list a');
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    serviceLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Get the target service
+                    const targetService = this.getAttribute('data-service');
+                    
+                    // Hide all service items
+                    serviceItems.forEach(item => {
+                        item.style.display = 'none';
+                    });
+                    
+                    // Show the target service item
+                    document.getElementById(targetService).style.display = 'block';
+                });
+            });
+            
+            // Initialize the first service as active
+            if (serviceLinks.length > 0) {
+                serviceLinks[0].click();
+            }
+        });
+    </script>
 </body>
 
 </html>
