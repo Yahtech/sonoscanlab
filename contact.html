@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Labsky - Laboratory HTML Website Template</title>
+    <title>Contact Us - Sonoscan Lab</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,6 +30,291 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Contact Page Custom Styles */
+        .contact-hero {
+            background: linear-gradient(rgba(26, 118, 209, 0.8), rgba(26, 118, 209, 0.9)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 40px 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: #1a76d1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            color: #1a76d1;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .contact-details p {
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-title {
+            color: #1a76d1;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .form-floating {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #1a76d1;
+            box-shadow: 0 0 0 0.2rem rgba(26, 118, 209, 0.25);
+        }
+        
+        .btn-primary-custom {
+            background: #1a76d1;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-primary-custom:hover {
+            background: #155a9e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .faq-title {
+            color: #1a76d1;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .accordion-item {
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .accordion-button {
+            background: white;
+            color: #1a76d1;
+            font-weight: 600;
+            padding: 20px;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: #1a76d1;
+            color: white;
+        }
+        
+        .accordion-body {
+            padding: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: #1a76d1;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .contact-info {
+                margin-bottom: 40px;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .contact-hero {
+                padding: 80px 0;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-section, .map-section, .faq-section {
+                padding: 60px 0;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .cta-section {
+                padding: 80px 0;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .contact-hero {
+                padding: 60px 0;
+            }
+            
+            .contact-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-section, .map-section, .faq-section {
+                padding: 40px 0;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -40,26 +325,18 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Topbar Start -->
     <div class="container-fluid py-2 d-none d-lg-flex">
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div>
-                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-                    <small class="me-3"><i class="fa fa-clock me-2"></i>Mon-Sat 09am-5pm, Sun Closed</small>
+                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>Sonoscan Abuja</small>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>24hrs Services</small>
                 </div>
-                <nav class="breadcrumb mb-0">
-                    <a class="breadcrumb-item small text-body" href="#">Career</a>
-                    <a class="breadcrumb-item small text-body" href="#">Support</a>
-                    <a class="breadcrumb-item small text-body" href="#">Terms</a>
-                    <a class="breadcrumb-item small text-body" href="#">FAQs</a>
-                </nav>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
-
 
     <!-- Brand Start -->
     <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
@@ -69,15 +346,15 @@
                     <i class="bi bi-telephone-inbound fs-2"></i>
                     <div class="ms-3">
                         <h5 class="text-white mb-0">Call Now</h5>
-                        <span>+012 345 6789</span>
+                        <span>+23412345678</span>
                     </div>
                 </div>
-                <a href="index.html" class="h1 text-white mb-0">Lab<span class="text-dark">sky</span></a>
+                <a href="index.html" class="h1 text-white mb-0">Sonoscan<span class="text-dark">Lab</span></a>
                 <div class="d-flex">
                     <i class="bi bi-envelope fs-2"></i>
                     <div class="ms-3">
                         <h5 class="text-white mb-0">Mail Now</h5>
-                        <span>info@example.com</span>
+                        <span>info@sonoscanlab.ng</span>
                     </div>
                 </div>
             </div>
@@ -85,13 +362,12 @@
     </div>
     <!-- Brand End -->
 
-
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand d-lg-none">
-                    <h1 class="text-primary m-0">Lab<span class="text-dark">sky</span></h1>
+                    <h1 class="text-primary m-0">Sonoscan<span class="text-dark">Lab</span></h1>
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -101,17 +377,8 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="appoinment.html" class="dropdown-item">Appoinment</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
+                        <a href="service.html" class="nav-item nav-link">Our Services</a>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <a href="contact.html" class="nav-item nav-link active">Contact</a>
                     </div>
                     <div class="ms-auto d-none d-lg-flex">
@@ -126,113 +393,193 @@
     </div>
     <!-- Navbar End -->
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5 mt-4">
-            <h1 class="display-2 text-white mb-3 animated slideInDown">Contact</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Contact</li>
-                </ol>
-            </nav>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch With Us</h1>
+            <p>We're here to answer your questions and provide the healthcare support you need. Reach out to us today.</p>
         </div>
-    </div>
-    <!-- Page Header End -->
+    </section>
 
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3">Have Any Query? Feel Free To Contact Us</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-            </div>
-            <div class="row contact-info position-relative g-0 mb-5">
-                <div class="col-lg-6">
-                    <a href="tel:+0123456789" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-phone text-dark"></i>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Our Location</h3>
+                                <p>123 Medical Drive, Central District<br>Abuja, Nigeria</p>
+                            </div>
                         </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">Call Us</h5>
-                            <h2 class="text-white mb-0">+012 345 67890</h2>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone Number</h3>
+                                <p>+234 123 456 7890<br>+234 098 765 4321</p>
+                            </div>
                         </div>
-                    </a>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email Address</h3>
+                                <p>info@sonoscanlab.ng<br>support@sonoscanlab.ng</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Opening Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 8:00 PM<br>Saturday: 9:00 AM - 5:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <a href="mailto:info@example.com" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-envelope text-dark"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">Mail Us</h5>
-                            <h2 class="text-white mb-0">info@example.com</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h2 class="form-title">Send Us a Message</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary-custom" type="submit">Send Message</button>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <iframe class="w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Contact End -->
+    </section>
 
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.258389712939!2d7.486538314786133!3d9.057722893521773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b2b8c0c0c0d%3A0x4d4d4d4d4d4d4d4d!2sAbuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1633020400000!5m2!1sen!2sng" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How do I schedule an appointment?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can schedule an appointment by calling our reception at +234 123 456 7890, using our online booking system on our website, or by visiting our facility in person. We recommend booking in advance to secure your preferred time slot.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What should I bring to my appointment?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Please bring a valid ID, your health insurance card (if applicable), any relevant medical records or test results, and a list of current medications. For certain tests, you may need to follow specific preparation instructions provided when booking.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How long does it take to get test results?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The turnaround time for test results varies depending on the type of test. Routine blood tests are typically available within 24-48 hours, while more specialized tests may take 3-7 days. We will inform you of the expected timeline when you have your tests done.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Do you accept health insurance?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we work with most major health insurance providers. Please contact our billing department with your insurance information to verify coverage before your appointment. We also offer self-pay options for patients without insurance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Need Immediate Assistance?</h2>
+            <p class="cta-text">Our team is ready to help you with any questions or concerns. Don't hesitate to reach out.</p>
+            <a href="tel:+2341234567890" class="btn btn-primary-custom">Call Now: +234 123 456 7890</a>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Start -->
-    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5">
         <div class="container">
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="h1 text-primary mb-0">Lab<span class="text-white">sky</span></h1>
+                        <h1 class="h1 text-primary mb-0">Sonoscan<span class="text-white">Lab</span></h1>
                     </a>
-                    <p class="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-                    <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <p class="fs-5 mb-4">Your trusted partner in health and wellness, providing comprehensive medical services with cutting-edge technology and compassionate care.</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>Sonoscan, Abuja</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+234123456789</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@sonoscanlab.ng</p>
                     <div class="d-flex mt-4">
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -244,27 +591,17 @@
                     <div class="row g-5">
                         <div class="col-sm-6">
                             <h4 class="text-light mb-4">Quick Links</h4>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Our Services</a>
-                            <a class="btn btn-link" href="">Terms & Condition</a>
-                            <a class="btn btn-link" href="">Support</a>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                            <a class="btn btn-link" href="service.html">Our Services</a>
+                            <a class="btn btn-link" href="blog.html">Blog</a>
                         </div>
                         <div class="col-sm-6">
-                            <h4 class="text-light mb-4">Popular Links</h4>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Our Services</a>
-                            <a class="btn btn-link" href="">Terms & Condition</a>
-                            <a class="btn btn-link" href="">Support</a>
-                        </div>
-                        <div class="col-sm-12">
-                            <h4 class="text-light mb-4">Newsletter</h4>
-                            <div class="w-100">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
-                                </div>
-                            </div>
+                            <h4 class="text-light mb-4">Our Services</h4>
+                            <a class="btn btn-link" href="service.html#diagnostics">Diagnostics</a>
+                            <a class="btn btn-link" href="service.html#consultation">Consultation</a>
+                            <a class="btn btn-link" href="service.html#checkup">Health Check-ups</a>
+                            <a class="btn btn-link" href="service.html#ultrasound">Ultrasound</a>
                         </div>
                     </div>
                 </div>
@@ -273,27 +610,20 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark text-white-50 py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
+                    <p class="mb-0">&copy; <a href="#">SonoScanLab</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    <p class="mb-0">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p class="mb-0">Designed by <a href="https://phygital-15fn.vercel.app/">Phygital</a></p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Copyright End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
