@@ -158,6 +158,54 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
+        /* Office Locations Section Styles */
+        .locations-section {
+            position: relative;
+            padding: 80px 0;
+        }
+
+        .location-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .location-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1a76d1, #28a745, #fd7e14);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .location-card:hover::before {
+            opacity: 1;
+        }
+
+        .location-icon {
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover .location-icon {
+            transform: scale(1.1);
+        }
+
+        .location-meta {
+            border-top: 1px solid #e9ecef;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
         .faq-section {
             padding: 80px 0;
         }
@@ -259,6 +307,10 @@
             .cta-title {
                 font-size: 2rem;
             }
+            
+            .locations-section .location-card {
+                margin-bottom: 20px;
+            }
         }
         
         @media (max-width: 767px) {
@@ -270,7 +322,7 @@
                 font-size: 2.2rem;
             }
             
-            .contact-section, .map-section, .faq-section {
+            .contact-section, .map-section, .faq-section, .locations-section {
                 padding: 60px 0;
             }
             
@@ -295,6 +347,26 @@
             .cta-title {
                 font-size: 1.8rem;
             }
+            
+            .location-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .location-icon {
+                margin-right: 0 !important;
+                margin-bottom: 15px;
+            }
+            
+            .alert .d-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .alert .fa-info-circle {
+                margin-right: 0 !important;
+                margin-bottom: 15px;
+            }
         }
         
         @media (max-width: 575px) {
@@ -306,19 +378,32 @@
                 font-size: 1.8rem;
             }
             
-            .contact-section, .map-section, .faq-section {
+            .contact-section, .map-section, .faq-section, .locations-section {
                 padding: 40px 0;
             }
             
             .contact-info, .contact-form {
                 padding: 25px 20px;
             }
+            
+            .locations-section .display-5 {
+                font-size: 2rem;
+            }
+            
+            .location-card {
+                padding: 20px !important;
+            }
         }
     </style>
 </head>
-<!-- <a href="https://wa.me/2348145250000?text=Hello%20Sonoscan%20Lab!%20I%20would%20like%20to%20make%20an%20inquiry." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a> -->
+
 <body>
-<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/2348145250000?text=Hello%20Sonoscan%20Lab!%20I%20would%20like%20to%20make%20an%20inquiry." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -409,12 +494,9 @@
                 <div class="col-lg-5">
                     <div class="contact-info">
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="bi bi-geo-alt"></i>
-                            </div>
+                            
                             <div class="contact-details">
-                                <h3>Our Location</h3>
-                                <p>123 Medical Drive, Central District<br>Abuja, Nigeria</p>
+                            
                             </div>
                         </div>
                         <div class="contact-item">
@@ -486,6 +568,118 @@
         </div>
     </section>
 
+
+    <!-- Office Locations Section -->
+    <section class="locations-section py-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Our Office Locations</h2>
+                    <p class="lead text-muted">Visit us at any of our conveniently located centers</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Location 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="location-card bg-light rounded-3 p-4 shadow-sm border-start border-primary border-4">
+                        <div class="location-header d-flex align-items-center mb-3">
+                            <div class="location-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="text-primary mb-0">Jikwoyi Phase 2</h4>
+                        </div>
+                        <div class="location-body">
+                            <h5 class="text-dark mb-3">Sonoscan Medical Diagnostic Center</h5>
+                            <p class="text-muted mb-3">
+                                <i class="fas fa-location-dot text-primary me-2"></i>
+                                No. 2 Grace Pavilion Street<br>
+                                (Formerly Prayer Road)<br>
+                                Jikwoyi Phase 2, Abuja, FCT
+                            </p>
+                            <div class="location-meta">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock text-primary me-1"></i>
+                                    Mon-Fri: 8AM-8PM • Sat: 9AM-5PM
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Location 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="location-card bg-light rounded-3 p-4 shadow-sm border-start border-success border-4">
+                        <div class="location-header d-flex align-items-center mb-3">
+                            <div class="location-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="text-success mb-0">Gidamangoro</h4>
+                        </div>
+                        <div class="location-body">
+                            <h5 class="text-dark mb-3">Sonoscan Medical Diagnostic Center</h5>
+                            <p class="text-muted mb-3">
+                                <i class="fas fa-location-dot text-success me-2"></i>
+                                No 7 Loyola Jesuit Road<br>
+                                (Directly Opposite Loyola Jesuit College gate)<br>
+                                Gidamangoro, Abuja, FCT
+                            </p>
+                            <div class="location-meta">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock text-success me-1"></i>
+                                    Mon-Fri: 8AM-8PM • Sat: 9AM-5PM
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Location 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="location-card bg-light rounded-3 p-4 shadow-sm border-start border-warning border-4">
+                        <div class="location-header d-flex align-items-center mb-3">
+                            <div class="location-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="text-warning mb-0">New Nyanya</h4>
+                        </div>
+                        <div class="location-body">
+                            <h5 class="text-dark mb-3">Rafella-City Medical and Diagnostic Center</h5>
+                            <p class="text-muted mb-3">
+                                <i class="fas fa-location-dot text-warning me-2"></i>
+                                Nyanya-Keffi Expressway<br>
+                                (Behind the Timber Market)<br>
+                                New Nyanya, Nasarrawa State
+                            </p>
+                            <div class="location-meta">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock text-warning me-1"></i>
+                                    Mon-Fri: 8AM-8PM • Sat: 9AM-5PM
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <!-- Additional Info -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="alert alert-info border-0 rounded-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-info-circle fa-2x text-info me-3"></i>
+                            <div>
+                                <h5 class="alert-heading mb-2">Multiple Locations for Your Convenience</h5>
+                                <p class="mb-0">All our centers are equipped with state-of-the-art medical equipment and staffed by experienced healthcare professionals. Choose the location most convenient for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
