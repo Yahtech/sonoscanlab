@@ -294,6 +294,64 @@
             transform: translateY(-3px);
         }
         
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .whatsapp-text {
+            display: none;
+        }
+        
+        /* Responsive Logo Styling */
+        .navbar-brand img {
+            max-height: 40px;
+            width: auto;
+            transition: max-height 0.3s ease;
+        }
+        
+        /* Desktop logo size (reduced) */
+        @media (min-width: 992px) {
+            .navbar-brand img {
+                max-height: 35px; /* Reduced size for desktop */
+            }
+            
+            .whatsapp-float {
+                width: auto;
+                height: auto;
+                padding: 10px 20px;
+                border-radius: 50px;
+            }
+            
+            .whatsapp-text {
+                display: inline;
+                font-size: 16px;
+                margin-left: 10px;
+            }
+        }
+        
+        /* Mobile logo size */
+        @media (max-width: 991px) {
+            .navbar-brand img {
+                max-height: 35px;
+            }
+        }
+        
         /* Responsive Styles */
         @media (max-width: 991px) {
             .contact-info {
@@ -393,6 +451,25 @@
             .location-card {
                 padding: 20px !important;
             }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        /* Ensure logo doesn't overflow on very small screens */
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                max-height: 30px;
+            }
+        }
+        
+        /* Logo container adjustments */
+        .navbar-brand {
+            padding: 5px 0;
         }
     </style>
 </head>
@@ -452,7 +529,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand">
                     <!-- Responsive logo image -->
-                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid">
+                    <img src="img/sonoscan-logo.jpg" alt="Sonoscan Lab" class="img-fluid">
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -490,12 +567,15 @@
     <section class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="contact-info">
                         <div class="contact-item">
-                            
+                            <div class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
                             <div class="contact-details">
-                            
+                                <h3>Main Office</h3>
+                                <p>No. 2 Grace Pavilion Street (Formerly Prayer Road)<br>Jikwoyi Phase 2, Abuja, FCT</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -528,11 +608,45 @@
                     </div>
                 </div>
                 
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h2 class="form-title">Send Us a Message</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary-custom" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Office Locations Section -->
     <section class="locations-section py-5 bg-white">
@@ -626,7 +740,6 @@
                     </div>
                 </div>
             </div>
-        
             
             <!-- Additional Info -->
             <div class="row mt-5">
@@ -644,42 +757,7 @@
             </div>
         </div>
     </section>
-    <div class="col-lg-7">
-                    <div class="contact-form">
-                        <h2 class="form-title">Send Us a Message</h2>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary-custom" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-    
+
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
@@ -703,7 +781,7 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            You can schedule an appointment by calling our reception at +234 123 456 7890, using our online booking system on our website, or by visiting our facility in person. We recommend booking in advance to secure your preferred time slot.
+                            You can schedule an appointment by calling our reception at +2348025460501, using our online booking system on our website, or by visiting our facility in person. We recommend booking in advance to secure your preferred time slot.
                         </div>
                     </div>
                 </div>
@@ -752,13 +830,12 @@
         <div class="container">
             <h2 class="cta-title">Need Immediate Assistance?</h2>
             <p class="cta-text">Our team is ready to help you with any questions or concerns. Don't hesitate to reach out.</p>
-            <a href="tel:+2341234567890" class="btn btn-primary-custom">Call Now: 08025460501</a>
+            <a href="tel:+2348025460501" class="btn btn-primary-custom">Call Now: 08025460501</a>
             <div class="social-links">
                 <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                
             </div>
         </div>
     </section>
