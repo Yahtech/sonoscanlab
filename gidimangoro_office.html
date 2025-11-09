@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gidamangoro - Sonoscan Lab</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Location Page Styles */
+        .location-hero {
+            background: linear-gradient(rgba(40, 167, 69, 0.85), rgba(40, 167, 69, 0.9)), url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .location-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            justify-content: center;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: white;
+        }
+        
+        .location-details {
+            padding: 80px 0;
+        }
+        
+        .location-info-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        
+        .location-icon {
+            width: 70px;
+            height: 70px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: #e9f7ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #28a745;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .info-content h4 {
+            color: #28a745;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .info-content p {
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        .map-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            height: 500px;
+        }
+        
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #e9f7ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #28a745;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .btn-light-custom {
+            background: white;
+            color: #28a745;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-light-custom:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .whatsapp-text {
+            display: none;
+        }
+        
+        /* Responsive Logo Styling */
+        .navbar-brand img {
+            max-height: 40px;
+            width: auto;
+        }
+        
+        /* Responsive Styles */
+        @media (min-width: 992px) {
+            .navbar-brand img {
+                max-height: 35px;
+            }
+            
+            .whatsapp-float {
+                width: auto;
+                height: auto;
+                padding: 10px 20px;
+                border-radius: 50px;
+            }
+            
+            .whatsapp-text {
+                display: inline;
+                font-size: 16px;
+                margin-left: 10px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .location-hero {
+                padding: 80px 0;
+            }
+            
+            .location-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .location-details, .map-section, .services-section {
+                padding: 60px 0;
+            }
+            
+            .location-info-card {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .location-hero {
+                padding: 60px 0;
+            }
+            
+            .location-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .location-details, .map-section, .services-section {
+                padding: 40px 0;
+            }
+            
+            .location-info-card {
+                padding: 30px 20px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .info-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/23407031004818?text=Hello%20Sonoscan%20Lab!%20I%20would%20like%20to%20visit%20your%20Gidamangoro%20location." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 d-none d-lg-flex">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>24hrs Services</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Call Now</h5>
+                        <span>+23407031004818</span>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Mail Now</h5>
+                        <span>sonoscanservices@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <a href="index.html" class="navbar-brand">
+                    <!-- Responsive logo image -->
+                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="service.html" class="dropdown-item">Diagnostics Services</a>
+                                <a href="consultation.html" class="dropdown-item">Dr. Consultation</a>
+                                <a href="health.html" class="dropdown-item">Medical Check up Packages</a>
+                            </div>
+                        </div>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex">
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Location Hero Section -->
+    <section class="location-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="contact.html">Locations</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gidamangoro</li>
+                </ol>
+            </nav>
+            <h1>Gidamangoro Location</h1>
+            <p class="lead">Conveniently located opposite Loyola Jesuit College</p>
+        </div>
+    </section>
+
+    <!-- Location Details Section -->
+    <section class="location-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="location-info-card">
+                        <div class="location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h2 class="mb-4">Location Information</h2>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Address</h4>
+                                <p>No 7 Loyola Jesuit Road<br>(Directly Opposite Loyola Jesuit College gate)<br>Gidamangoro, Abuja, FCT</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Opening Hours</h4>
+                                 <p>Monday - Saturday: 8:00 AM - 7:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Phone</h4>
+                                <p>+23407031004818</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>sonoscanservices@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Landmark</h4>
+                                <p>Directly opposite Loyola Jesuit College gate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <div class="ps-lg-4">
+                        <h2 class="text-success mb-4">About Our Gidamangoro Center</h2>
+                        <p class="lead mb-4">Our Gidamangoro location is strategically positioned opposite the prestigious Loyola Jesuit College, making it easily accessible for residents and visitors in the area. This center offers comprehensive diagnostic services with the same quality and professionalism as our main facility.</p>
+                        
+                        <!-- <div class="row mb-4">
+                            <div class="col-md-6">
+                                <h4 class="text-success mb-3">Facility Highlights</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Modern Laboratory Equipment</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Digital Imaging Services</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Comfortable Patient Areas</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Easy Access Location</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Professional Medical Staff</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="text-success mb-3">Find Us Easily</h2>
+                    <p class="lead">Get directions to our Gidamangoro location</p>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.258389712939!2d7.486538314786133!3d9.057722893521773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b2b8c0c0c0d%3A0x4d4d4d4d4d4d4d4d!2sAbuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1633020400000!5m2!1sen!2sng" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://maps.google.com/maps?q=No+7+Loyola+Jesuit+Road+Gidamangoro+Abuja+FCT" 
+                   target="_blank" class="btn btn-success btn-lg">
+                    <i class="fas fa-directions me-2"></i>Get Directions on Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="text-success mb-3">Services Available at This Location</h2>
+                    <p class="lead">Comprehensive diagnostic services tailored to meet community needs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4>Laboratory Testing</h4>
+                        <p>Complete blood work, urinalysis, biochemistry, and specialized diagnostic tests.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <h4>Medical Imaging</h4>
+                        <p>Ultrasound scans, X-ray services, and basic diagnostic imaging procedures.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4>Medical Consultation</h4>
+                        <p>Professional consultations with qualified medical doctors and specialists.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h4>Student Health</h4>
+                        <p>Special health packages and services for students and educational institutions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase-medical"></i>
+                        </div>
+                        <h4>Corporate Health</h4>
+                        <p>Employee health screening and corporate wellness programs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h4>Health Reports</h4>
+                        <p>Comprehensive medical reports and health certification services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Visit Our Gidamangoro Center Today</h2>
+                    <p class="mb-4">Conveniently located and fully equipped to serve your healthcare needs. Walk-ins welcome or book an appointment for faster service.</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="tel:+2347031004818" class="btn btn-light-custom">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                        <a href="https://wa.me/2347031004818" target="_blank" class="btn btn-light-custom">
+                            <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                        </a>
+                        <!-- <a href="#Appointment" class="btn btn-light-custom">
+                            <i class="fas fa-calendar me-2"></i>Book Appointment
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="h1 text-primary mb-0">Sonoscan<span class="text-white">Lab</span></h1>
+                    </a>
+                    <p class="fs-5 mb-4">Your trusted partner in health and wellness, providing comprehensive medical services with cutting-edge technology and compassionate care.</p>
+                    
+                    <p><i class="fa fa-phone-alt me-2"></i>07031004818</p>
+                    <p><i class="fa fa-envelope me-2"></i>sonoscanservices@gmail.com</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                            <a class="btn btn-link" href="service.html">Our Services</a>
+                            <a class="btn btn-link" href="blog.html">Blog</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Our Locations</h4>
+                            <a class="btn btn-link" href="location-jikwoyi.html">Jikwoyi Phase 2</a>
+                            <a class="btn btn-link" href="location-gidamangoro.html">Gidamangoro</a>
+                            <a class="btn btn-link" href="location-nyanya.html">New Nyanya</a>
+                            <a class="btn btn-link" href="contact.html">All Locations</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <a href="#">SonoScanLab</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a href="https://phygital-15fn.vercel.app/">Phygital</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
