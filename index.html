@@ -397,72 +397,93 @@ We offer comprehensive  X-ray services including all routine bones and joints x-
     </section>
 
     <!-- 6. ONLINE CONSULTATION WITH DOCTOR -->
-    <section class="section-padding consultation-section" id="Appointment">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mobile-margin-fix">
-                    <h2 class="section-title">Online Consultation with Doctor</h2>
-                    <p class="about-content">Connect with our experienced medical professionals from the comfort of your home. Our telehealth services provide convenient access to healthcare when you need it most.</p>
-                    <div class="mt-4">
-                        <h5>Benefits of Online Consultation:</h5>
-                        <ul>
-                            <li>Convenient access from anywhere</li>
-                            <li>Reduced waiting times</li>
-                            <li>Privacy and comfort of your home</li>
-                            <li>Electronic prescription services</li>
-                            <li>Follow-up consultations easily scheduled</li>
-                        </ul>
-                    </div>
+   <section class="section-padding consultation-section" id="Appointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mobile-margin-fix">
+                <h2 class="section-title">Online Consultation with Doctor</h2>
+                <p class="about-content">Connect with our experienced medical professionals from the comfort of your home. Our telehealth services provide convenient access to healthcare when you need it most.</p>
+                <div class="mt-4">
+                    <h5>Benefits of Online Consultation:</h5>
+                    <ul>
+                        <li>Convenient access from anywhere</li>
+                        <li>Reduced waiting times</li>
+                        <li>Privacy and comfort of your home</li>
+                        <li>Electronic prescription services</li>
+                        <li>Follow-up consultations easily scheduled</li>
+                    </ul>
                 </div>
-                <div class="col-lg-6">
-                    <div class="consultation-form">
-                        <h3 class="mb-4">Book Your Consultation</h3>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone">
-                                        <label for="phone">Your Phone</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="service">
-                                            <option selected>General Consultation</option>
-                                            <option value="followup">Follow-up Appointment</option>
-                                            <option value="secondopinion">Second Opinion</option>
-                                        </select>
-                                        <label for="service">Consultation Type</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Describe your symptoms or concerns" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Symptoms/Concerns</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary-custom w-100" type="submit">Request Consultation</button>
-                                </div>
-                            </div>
-                        </form>
+                <!-- Response Message Container -->
+                <div id="form-response" class="mt-4" style="display: none;">
+                    <div class="alert alert-dismissible fade show" role="alert">
+                        <span id="response-message"></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="consultation-form">
+                    <h3 class="mb-4">Book Your Consultation</h3>
+                    <form id="consultation-form" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name *</label>
+                                    <div class="invalid-feedback">Please provide your name.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email *</label>
+                                    <div class="invalid-feedback">Please provide a valid email.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone" required>
+                                    <label for="phone">Your Phone *</label>
+                                    <div class="invalid-feedback">Please provide your phone number.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="service" name="service" required>
+                                        <option value="" selected disabled>Select Consultation Type</option>
+                                        <option value="General Consultation">General Consultation</option>
+                                        <option value="Follow-up Appointment">Follow-up Appointment</option>
+                                        <option value="Second Opinion">Second Opinion</option>
+                                        <option value="Test Results Discussion">Test Results Discussion</option>
+                                        <option value="Prescription Refill">Prescription Refill</option>
+                                    </select>
+                                    <label for="service">Consultation Type *</label>
+                                    <div class="invalid-feedback">Please select a consultation type.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Describe your symptoms or concerns" id="message" name="message" style="height: 100px" required></textarea>
+                                    <label for="message">Symptoms/Concerns *</label>
+                                    <div class="invalid-feedback">Please describe your symptoms or concerns.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary-custom w-100" type="submit" id="submit-btn">
+                                    <span id="submit-text">Request Consultation</span>
+                                    <span id="submit-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                </button>
+                            </div>
+                            <div class="col-12">
+                                <small class="text-muted">* Required fields. We respect your privacy and will keep your information confidential.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 7. HEALTH BLOGS -->
     <section class="section-padding">
@@ -623,4 +644,81 @@ Jikwoyi Phase 2, Abuja, FCT</p>
     <script src="js/main.js"></script>
 </body>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const consultationForm = document.getElementById('consultation-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitSpinner = document.getElementById('submit-spinner');
+    const formResponse = document.getElementById('form-response');
+    const responseMessage = document.getElementById('response-message');
+
+    consultationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate form
+        if (!consultationForm.checkValidity()) {
+            e.stopPropagation();
+            consultationForm.classList.add('was-validated');
+            return;
+        }
+
+        // Show loading state
+        submitText.textContent = 'Submitting...';
+        submitSpinner.style.display = 'inline-block';
+        submitBtn.disabled = true;
+
+        // Create FormData object
+        const formData = new FormData(consultationForm);
+
+        // Send AJAX request
+        fetch('consultation.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Show response message
+            const alertClass = data.status === 'success' ? 'alert-success' : 'alert-danger';
+            formResponse.querySelector('.alert').className = `alert ${alertClass} alert-dismissible fade show`;
+            responseMessage.textContent = data.message;
+            formResponse.style.display = 'block';
+
+            // Scroll to response message
+            formResponse.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Reset form if successful
+            if (data.status === 'success') {
+                consultationForm.reset();
+                consultationForm.classList.remove('was-validated');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            formResponse.querySelector('.alert').className = 'alert alert-danger alert-dismissible fade show';
+            responseMessage.textContent = 'An error occurred. Please try again or contact us directly.';
+            formResponse.style.display = 'block';
+            formResponse.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .finally(() => {
+            // Reset button state
+            submitText.textContent = 'Request Consultation';
+            submitSpinner.style.display = 'none';
+            submitBtn.disabled = false;
+        });
+    });
+
+    // Real-time validation
+    consultationForm.addEventListener('input', function(e) {
+        const input = e.target;
+        if (input.checkValidity()) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        } else {
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+        }
+    });
+});
+</script>
 </html>
