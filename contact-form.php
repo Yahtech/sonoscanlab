@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If no errors, proceed with email
     if (empty($errors)) {
         // Email configuration
-        $to = "sonoscanservices@gmail.com"; // Change this to your email
+        $to = "yahyasiyaka@gmail.com"; // Change this to your email
         $email_subject = "New Contact Form Message: " . $subject;
         
         // Email template

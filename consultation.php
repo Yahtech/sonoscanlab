@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If no errors, proceed with email
     if (empty($errors)) {
         // Email configuration
-        $to = "sonoscanservices@gmail.com"; // Change this to your email
+        $to = "yahyasiyaka@gmail.com"; // Change this to your email
         $subject = "New Online Consultation Request - Sonoscan Lab";
         
         // Email template
