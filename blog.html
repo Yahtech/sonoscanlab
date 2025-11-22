@@ -88,40 +88,6 @@
             font-size: 1.3rem;
         }
         
-        .categories-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .categories-list li {
-            margin-bottom: 8px;
-        }
-        
-        .categories-list a {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            color: #333;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
-        }
-        
-        .categories-list a:hover {
-            color: #1a76d1;
-            padding-left: 10px;
-        }
-        
-        .categories-list span {
-            background-color: #1a76d1;
-            color: white;
-            border-radius: 20px;
-            padding: 2px 10px;
-            font-size: 0.75rem;
-        }
-        
         .recent-posts-list {
             list-style: none;
             padding: 0;
@@ -194,20 +160,6 @@
         
         .blog-posts {
             padding-left: 30px;
-        }
-        
-        .category-section {
-            margin-bottom: 50px;
-            scroll-margin-top: 100px;
-        }
-        
-        .category-title {
-            color: #1a76d1;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #1a76d1;
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 700;
         }
         
         .blog-post {
@@ -383,55 +335,42 @@
             background-color: #11487c;
         }
         
-        /* Active Category Highlight */
-        .category-section.active {
-            border-left: 5px solid #1a76d1;
-            padding-left: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        /* Category Navigation */
-        .category-nav {
-            position: sticky;
-            top: 70px;
-            background: white;
-            padding: 12px 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            display: none;
-        }
-        
-        .category-nav-links {
+        /* Like/Dislike Styles */
+        .post-reactions {
             display: flex;
-            justify-content: flex-start;
-            flex-wrap: nowrap;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 5px 0;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
         }
         
-        .category-nav-links::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .category-nav-link {
-            padding: 6px 12px;
-            background: #f8f9fa;
-            border-radius: 20px;
-            text-decoration: none;
-            color: #333;
-            font-size: 0.85rem;
+        .reaction-btn {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            cursor: pointer;
+            color: #777;
             transition: all 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
+            font-size: 0.9rem;
         }
         
-        .category-nav-link:hover, .category-nav-link.active {
-            background: #1a76d1;
-            color: white;
+        .reaction-btn:hover {
+            color: #1a76d1;
+        }
+        
+        .reaction-btn.active {
+            color: #1a76d1;
+        }
+        
+        .reaction-btn i {
+            margin-right: 5px;
+            font-size: 1rem;
+        }
+        
+        .reaction-count {
+            margin-left: 3px;
         }
         
         /* Responsive Styles */
@@ -450,10 +389,6 @@
             
             .blog-posts {
                 padding-left: 0;
-            }
-            
-            .category-nav {
-                display: block;
             }
             
             .blog-hero {
@@ -498,14 +433,6 @@
                 padding: 12px;
             }
             
-            .category-nav {
-                top: 60px;
-            }
-            
-            .category-section {
-                scroll-margin-top: 120px;
-            }
-            
             .pagination {
                 flex-wrap: wrap;
             }
@@ -534,14 +461,6 @@
                 margin-right: 0;
                 margin-bottom: 10px;
             }
-            
-            .category-nav {
-                top: 56px;
-            }
-            
-            .category-section {
-                scroll-margin-top: 130px;
-            }
         }
         
         @media (max-width: 400px) {
@@ -561,7 +480,7 @@
         }
     </style>
 </head>
-<!-- <a href="https://wa.me/2348025460501?text=Hello%20Sonoscan%20Lab!%20I%20would%20like%20to%20make%20an%20inquiry." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a> -->
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
@@ -592,7 +511,7 @@
                     <i class="bi bi-telephone-inbound fs-2"></i>
                     <div class="ms-3">
                         <h5 class="text-white mb-0">Call Now</h5>
-                        <span>+2348025460501</span>
+                        <span>+2347031004818</span>
                     </div>
                 </div>
                         <div class="d-flex">
@@ -648,7 +567,7 @@
     <!-- Blog Hero Section -->
     <div class="blog-hero">
         <div class="container">
-            <h1>Health & Wellness Blog</h1>
+            <h1>Health Blog</h1>
             <p>Stay informed with the latest medical insights, health tips, and news from our team of healthcare professionals</p>
         </div>
     </div>
@@ -659,49 +578,36 @@
             <!-- Sidebar -->
             <div class="col-lg-4">
                 <div class="blog-sidebar">
-                    <!-- Categories Widget -->
-                    <div class="sidebar-widget">
-                        <h3>Categories</h3>
-                        <ul class="categories-list">
-                            <!-- <li><a href="#preventive-care" class="category-link" data-category="preventive-care">Preventive Care <span></span></a></li> -->
-                            <li><a href="#medical-technology" class="category-link" data-category="medical-technology">Medical Technology <span></span></a></li>
-                            <li><a href="#health-tips" class="category-link" data-category="health-tips">Health Tips <span></span></a></li>
-                            <li><a href="#diagnostics" class="category-link" data-category="diagnostics">Diagnostics <span></span></a></li>
-                            <li><a href="#wellness" class="category-link" data-category="wellness">Wellness <span></span></a></li>
-                            <li><a href="#patient-stories" class="category-link" data-category="patient-stories">Patient Stories <span></span></a></li>
-                        </ul>
-                    </div>
-                    
                     <!-- Recent Posts Widget -->
                     <div class="sidebar-widget">
                         <h3>Recent Posts</h3>
                         <ul class="recent-posts-list">
                             <li class="recent-post">
-                                <img src="img/medical packs 1.jpg" alt="Recent Post" class="recent-post-img">
+                                <img src="img/diabetics.jpg" alt="Diabetes Prevention" class="recent-post-img">
                                 <div class="recent-post-content">
-                                    <h4><a href="#">The Importance of Regular Health Check-ups</a></h4>
-                                    <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                                    <h4><a href="#">HOW TO PREVENT DIABETES</a></h4>
+                                    <span><i class="far fa-calendar"></i> 2025</span>
                                 </div>
                             </li>
                             <li class="recent-post">
-                                <img src="img/tools.jpeg" alt="Recent Post" class="recent-post-img">
+                                <img src="img/hyper.jpg" alt="Hypertension" class="recent-post-img">
                                 <div class="recent-post-content">
-                                    <h4><a href="#">Understanding Modern Diagnostic Tools</a></h4>
-                                    <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                                    <h4><a href="#">WHY IS HYPERTENSION CALLED A "SILENT KILLER"?</a></h4>
+                                    <span><i class="far fa-calendar"></i>2025</span>
                                 </div>
                             </li>
-                            <!-- <li class="recent-post">
-                                <img src="img/hearttip.png" alt="Recent Post" class="recent-post-img">
+                            <li class="recent-post">
+                                <img src="img/prostrate.jpg" alt="Prostate Health" class="recent-post-img">
                                 <div class="recent-post-content">
-                                    <h4><a href="#">5 Ways to Improve Your Heart Health</a></h4>
-                                    <span><i class="far fa-calendar"></i> May 12, 2023</span>
+                                    <h4><a href="#">KEEPING UP WITH YOUR PROSTATE</a></h4>
+                                    <span><i class="far fa-calendar"></i> 2025</span>
                                 </div>
-                            </li> -->
+                            </li>
                         </ul>
                     </div>
                     
                     <!-- Tags Widget -->
-                    <div class="sidebar-widget">
+                    <!-- <div class="sidebar-widget">
                         <h3>Tags</h3>
                         <div class="tags-list">
                             <a href="#" class="tag">Health</a>
@@ -711,159 +617,322 @@
                             <a href="#" class="tag">Medical</a>
                             <a href="#" class="tag">Check-up</a>
                             <a href="#" class="tag">Cardiology</a>
+                            <a href="#" class="tag">Diabetes</a>
+                            <a href="#" class="tag">Hypertension</a>
+                            <a href="#" class="tag">Prostate</a>
+                            <a href="#" class="tag">Liver</a>
+                            <a href="#" class="tag">Cancer</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-            </div>
+            </div> 
             
             <!-- Blog Posts -->
             <div class="col-lg-8">
-                <!-- Category Navigation (for mobile) -->
-                <div class="category-nav">
-                    <div class="category-nav-links">
-                        <!-- <a href="#preventive-care" class="category-nav-link" data-category="preventive-care">Preventive Care</a> -->
-                        <a href="#medical-technology" class="category-nav-link" data-category="medical-technology">Medical Technology</a>
-                        <a href="#health-tips" class="category-nav-link" data-category="health-tips">Health Tips</a>
-                        <a href="#diagnostics" class="category-nav-link" data-category="diagnostics">Diagnostics</a>
-                        <a href="#wellness" class="category-nav-link" data-category="wellness">Wellness</a>
-                        <a href="#patient-stories" class="category-nav-link" data-category="patient-stories">Patient Stories</a>
-                    </div>
-                </div>
-                
                 <div class="blog-posts">
-                    <!-- Preventive Care Section -->
-                    <!-- <section id="preventive-care" class="category-section">
-                        <h2 class="category-title">Preventive Care</h2> -->
-                        
-                        <!-- Blog Post 1 -->
-                        <!-- <article class="blog-post">
-                            <img src="img/medical packs 2.jpg" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Sarah Johnson</span>
-                                    <span><i class="far fa-calendar"></i> June 15, 2023</span>
-                                    <span><i class="far fa-comments"></i> 12 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">The Importance of Regular Health Check-ups</a></h2>
-                                <p class="post-excerpt">
-                                    Regular health check-ups are crucial for early detection of potential health issues. In this article, we explore why preventive healthcare should be a priority for everyone, regardless of age or current health status...
-                                </p> -->
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
-                            <!-- </div>
-                        </article> -->
-                        
-                        <!-- Blog Post 2 -->
-                        <!-- <article class="blog-post">
-                            <img src="img/hearttip.png" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Amina Okoro</span>
-                                    <span><i class="far fa-calendar"></i> May 12, 2023</span>
-                                    <span><i class="far fa-comments"></i> 15 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">5 Ways to Improve Your Heart Health</a></h2>
-                                <p class="post-excerpt">
-                                    Heart disease remains a leading cause of mortality worldwide. Discover five practical steps you can take today to improve your cardiovascular health and reduce your risk of heart-related conditions...
-                                </p> -->
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
-                            <!-- </div>
-                        </article> -->
-                        
-                        <!-- Blog Post 3 -->
-                        <!-- <article class="blog-post">
-                            <img src="img/stress.jpeg" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Fatima Bello</span>
-                                    <span><i class="far fa-calendar"></i> April 10, 2023</span>
-                                    <span><i class="far fa-comments"></i> 9 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">Managing Stress for Better Health Outcomes</a></h2>
-                                <p class="post-excerpt">
-                                    Chronic stress can have significant impacts on both mental and physical health. Learn effective strategies for stress management and how reducing stress levels can improve your overall wellbeing...
-                                </p> -->
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
-                            <!-- </div>
-                        </article>
-                    </section> -->
+                    <!-- Blog Post 1 - Diabetes Prevention -->
+                    <article class="blog-post">
+                        <img src="img/diabetics.jpg" alt="Diabetes Prevention" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 15 Comments</span> -->
+                            </div>
+                            <h2 class="post-title"><a href="#">HOW TO PREVENT DIABETES</a></h2>
+                            <p class="post-excerpt">
+                                Diabetes mellitus is a group of chronic diseases arising from deranged metabolic functions in the body characterized by high blood sugar levels due to either the pancreas not producing adequate amount of a body chemical called insulin or the body not using same insulin effectively. Most diabetic patients may experience symptoms such as increased thirst and urination, fatigue, and weight loss.
+                            </p>
+                            <p class="post-excerpt">
+                                Over the long term diabetic patients are at risk of different complications. These can include heart attack, stroke, chronic kidney disease, vision loss, nerve damage (neuropathy), and foot ulcers, which may lead to cutting the legs off. Other complications include skin and mouth conditions, hearing impairment, and an increased risk of dementia (memory impairment) and certain bone diseases.
+                            </p>
+                            <p class="post-excerpt">
+                                To PREVENT DIABETES, you need to set a healthy lifestyle as a priority by maintaining a healthy weight, getting at least two and half hours of moderate physical activity per week, and eating a balanced diet low in sugar and saturated fat. Other key steps include managing stress, getting enough sleep, limiting alcohol, and quitting smoking. Always remember that prevention is better than cure!
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="diabetes-prevention">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="diabetes-prevention">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
                     
-                    <!-- Medical Technology Section -->
-                    <section id="medical-technology" class="category-section">
-                        <h2 class="category-title">Medical Technology</h2>
-                        
-                        <!-- Blog Post 4 -->
-                        <article class="blog-post">
-                            <img src="img/tech.jpeg" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Michael Adebayo</span>
-                                    <span><i class="far fa-calendar"></i> May 28, 2023</span>
-                                    <span><i class="far fa-comments"></i> 8 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">Understanding Modern Diagnostic Tools</a></h2>
-                                <p class="post-excerpt">
-                                    Medical technology has advanced significantly in recent years. Learn about the latest diagnostic tools available at Sonoscan Lab and how they're revolutionizing patient care and treatment outcomes...
-                                </p>
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
+                    <!-- Blog Post 2 - Hypertension -->
+                    <article class="blog-post">
+                        <img src="img/hyper.jpg" alt="Hypertension" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 12 Comments</span> -->
                             </div>
-                        </article>
-                        
-                        <!-- Blog Post 5 -->
-                        <article class="blog-post">
-                            <img src="img/ultrasound.jpg" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. James Okafor</span>
-                                    <span><i class="far fa-calendar"></i> April 25, 2023</span>
-                                    <span><i class="far fa-comments"></i> 6 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">The Role of Ultrasound in Modern Medicine</a></h2>
-                                <p class="post-excerpt">
-                                    Ultrasound technology has evolved beyond pregnancy imaging. Explore how this non-invasive diagnostic tool is used across various medical specialties to provide accurate diagnoses without radiation...
-                                </p>
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
+                            <h2 class="post-title"><a href="#">WHY IS HYPERTENSION CALLED A "SILENT KILLER"?</a></h2>
+                            <p class="post-excerpt">
+                                Among medical professionals, hypertension is widely called a "silent killer". This is because most affected people do not manifest any symptoms until complications develop. In other words, it is a silent danger because someone can have the condition for many years without knowing it. The complications of hypertension can be sudden or gradual in onset:
+                            </p>
+                            <p class="post-excerpt">
+                                SUDDENLY, someone has a stroke (mostly manifested as paralysis) and then he is diagnosed with hypertension.
+                            </p>
+                            <p class="post-excerpt">
+                                SUDDENLY, someone has a heart attack, and it becomes linked to hypertension.
+                            </p>
+                            <p class="post-excerpt">
+                                SUDDENLY, someone develops kidney failure. And again, hypertension is found to be the cause.
+                            </p>
+                            <p class="post-excerpt">
+                                GRADUALLY, someone's eye sight fails, their ability to think clearly and remember events drops noticeably. And behind it all could be untreated blood high pressure.
+                            </p>
+                            <p class="post-excerpt">
+                                Other complications of hypertension include heart failure (either from a weakened heart muscle or by a sudden heart attack) and aneurysms (bulging and possible rupture of arteries).
+                            </p>
+                            <p class="post-excerpt">
+                                Checking your blood pressure regularly could do you a whole world of good as they say.
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="hypertension">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="hypertension">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
                             </div>
-                        </article>
-                    </section>
+                        </div>
+                    </article>
                     
-                    <!-- Health Tips Section -->
-                    <section id="health-tips" class="category-section">
-                        <h2 class="category-title">Health Tips</h2>
-                        
-                        <!-- Blog Post 6 -->
-                        <article class="blog-post">
-                            <img src="img/cardiac.jpeg" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Chinedu Nwankwo</span>
-                                    <span><i class="far fa-calendar"></i> March 28, 2023</span>
-                                    <span><i class="far fa-comments"></i> 11 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">Advancements in Cardiac Care</a></h2>
-                                <p class="post-excerpt">
-                                    Cardiology has seen remarkable advancements in recent years. From minimally invasive procedures to advanced monitoring technologies, discover how modern cardiac care is saving lives...
-                                </p>
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
+                    <!-- Blog Post 3 - Prostate Health -->
+                    <article class="blog-post">
+                        <img src="img/prostrate.jpg" alt="Prostate Health" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 8 Comments</span> -->
                             </div>
-                        </article>
-                        
-                        <!-- Blog Post 7 -->
-                        <!-- <article class="blog-post">
-                            <img src="img/healthylife.jpeg" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Sarah Johnson</span>
-                                    <span><i class="far fa-calendar"></i> March 15, 2023</span>
-                                    <span><i class="far fa-comments"></i> 7 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">Nutrition Tips for a Healthy Lifestyle</a></h2>
-                                <p class="post-excerpt">
-                                    Proper nutrition is fundamental to good health. Learn about essential nutrients, balanced diets, and practical tips for maintaining healthy eating habits in today's busy world...
-                                </p> -->
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
-                            <!-- </div>
-                        </article>
-                    </section> -->
+                            <h2 class="post-title"><a href="#">KEEPING UP WITH YOUR PROSTATE</a></h2>
+                            <p class="post-excerpt">
+                                Prostate diseases can range from benign conditions such as prostatitis (prostate infection), BPH (benign age-related prostate enlargement) to potentially serious conditions such as prostate cancer. Therefore maintaining a healthy prostate should be important for every man 50yrs and above or even earlier if there is a family history of chronic prostate disease.
+                            </p>
+                            <p class="post-excerpt">
+                                Common prostate symptoms include frequent or urgent urination, especially at night, and difficulty starting or maintaining a urine stream. Other symptoms can be pain or burning during urination, blood in the urine or semen, and painful ejaculation. Some men may also experience pain or stiffness in the lower back, hips, or thighs. It is important to see a doctor for any of these symptoms, as they may be caused by various prostate conditions, including cancer.
+                            </p>
+                            <p class="post-excerpt">
+                                Keeping your prostate healthy involves regular screenings, a healthy diet with fruits and vegetables, regular exercise, and avoiding tobacco. A diet rich in healthy fats, and low in saturated and trans fats, is beneficial. It's also important to consult a doctor for age-appropriate screenings and to address any urinary or sexual concerns.
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="prostate-health">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="prostate-health">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 4 - Fatty Liver -->
+                    <article class="blog-post">
+                        <img src="img/liver.jpg" alt="Fatty Liver" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 11 Comments</span> -->
+                            </div>
+                            <h2 class="post-title"><a href="#">FATTY LIVER AND YOU</a></h2>
+                            <p class="post-excerpt">
+                                This post highlights the importance of checking up on your liver regularly. The liver is located at upper right segment of the abdomen. It has vital roles in metabolism, detoxification, and digestion by filtering blood, producing bile, metabolizing nutrients, and storing vitamins and minerals. Functionally, the liver processes nutrients absorbed from the intestines and detoxifies harmful substances like drugs and alcohol, playing a crucial role in maintaining overall health.
+                            </p>
+                            <p class="post-excerpt">
+                                Fatty liver disease is a condition characterized by the buildup of excess fat in the liver, which can be caused by heavy alcohol use or non-alcoholic factors like obesity, diabetes, and high-fat diets. It can range from a mild condition with no symptoms to a more severe form called metabolic dysfunction-associated steatohepatitis (MASH), which involves inflammation and liver damage and can lead to cirrhosis or liver cancer.
+                            </p>
+                            <p class="post-excerpt">
+                                Often, there are no or few symptoms in the early stages. When symptoms occur, they may include fatigue or pain in the upper right side of the abdomen. In advanced stages like cirrhosis, symptoms can include jaundice (yellowing of the skin and eyes), confusion, and swelling in the legs or abdomen.
+                            </p>
+                            <p class="post-excerpt">
+                                Risk factors for fatty liver disease include being overweight or obesity, high-fat and high-sugar diets, high alcohol intake, diabetes, high cholesterol and triglycerides, high blood pressure.
+                            </p>
+                            <p class="post-excerpt">
+                                Fatty liver disease progresses through four stages: fatty liver (steatosis), where fat builds up with no damage; metabolic dysfunction-associated steatohepatitis (MASH), which involves fat accumulation and inflammation; fibrosis, where inflammation causes scarring; and cirrhosis, the final stage of severe, irreversible liver scarring.
+                            </p>
+                            <p class="post-excerpt">
+                                Treatment often involves lifestyle changes like weight loss, exercise, and dietary improvements. Early stages can be reversed with lifestyle changes, but advanced stages lead to serious complications like liver failure.
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="fatty-liver">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="fatty-liver">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 5 - Peptic Ulcer -->
+                    <article class="blog-post">
+                        <img src="img/peptic.jpg" alt="Peptic Ulcer" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 7 Comments</span> -->
+                            </div>
+                            <h2 class="post-title"><a href="#">CAN YOU PREVENT PEPTIC ULCER DISEASE?</a></h2>
+                            <p class="post-excerpt">
+                                Peptic ulcer disease (PUD) is a condition that cause irritation and sores on the inside of the stomach or small intestine. H. pylori bacteria infection and prolonged use of nonsteroidal anti-inflammatory drugs (NSAIDs)such as aspirin and ibuprofen are the main causes PUD.
+                            </p>
+                            <p class="post-excerpt">
+                                Symptoms include a burning or gnawing pain in the upper abdomen, which may improve with food or antacids. The pain may also radiate to the mid back. Treatments often involve antibiotics for H. pylori and medications to reduce stomach acid, while unusually severe cases may require surgical intervention.
+                            </p>
+                            <p class="post-excerpt">
+                                To prevent peptic ulcer disease, avoid smoking and excessive alcohol, use NSAIDs (like aspirin and ibuprofen) carefully, and treat H. pylori infections. Taking NSAIDs with food and talking to your doctor about long-term use or alternatives can also help reduce risk.
+                            </p>
+                            <p class="post-excerpt">
+                                Get tested and treated for H. pylori: The bacteria is a common cause of ulcers, and most people don't know they have it. Regular check-ups are important for early detection and management of risk factors for PUD.
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="peptic-ulcer">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="peptic-ulcer">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 6 - Cancer Screening -->
+                    <article class="blog-post">
+                        <img src="img/hyper.jpg" alt="Cancer Screening" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 14 Comments</span> -->
+                            </div>
+                            <h2 class="post-title"><a href="#">IS CANCER SCREENING REALLY NECESSARY?</a></h2>
+                            <p class="post-excerpt">
+                                Cancer is a non-communicable disease and contributes a significant quota to the burden of disease and deaths arising from that group of diseases. However, less attention is paid to cancer screening largely as a result of poor awareness amongst the general population concerning both the availability and necessity of these screenings.
+                            </p>
+                            <p class="post-excerpt">
+                                Cancer screening generally involves tests to detect cancer before symptoms appear, making treatment more effective and increasing the chances of a cure. Methods of screening include visual examinations of affected parts of the body, imaging (like X-rays, mammograms, or MRIs), blood or urine tests, and procedures like endoscopy or Pap smears. Abnormal results may require further diagnostic tests to confirm a diagnosis.
+                            </p>
+                            <p class="post-excerpt">
+                                Cancer screening needs may vary by age and risk factors, but general recommendations include starting at age 45 for colorectal cancer, 40–45 for breast cancer, and 21 for cervical cancer. For specific cancers like lung cancer, screening may be recommended for individuals between 50 and 75 who have a history of smoking. Likewise prostate cancer screening may start at the age of 40 or even less if there is a family history of prostate cancer.
+                            </p>
+                            <p class="post-excerpt">
+                                It's important to note that these are general guidelines, and screening recommendations can change based on personal and family medical history. Individuals with higher risks may need to begin screening earlier or more frequently. It is best to discuss your specific risk factors and appropriate screening schedule with a healthcare provider.
+                            </p>
+                            <p class="post-excerpt">
+                                Screening is usually for people who do not have any symptoms of cancer. Moreover a positive screening result does not always mean you have cancer. It might just mean that further testing may be needed to determine if cancer is actually present. Usually your doctor will recommend specific screenings and how often you carry them out based on your age, family history, and other risk factors. At Sonoscan Medical Diagnostic Lab. we offer the following cancer screening packages.
+                            </p>
+                            <p class="post-excerpt">
+                                <strong>CANCER SCREENING PACKAGES</strong><br>
+                                ... Breast cancer.... Mammogram(when available) and Ultrasound<br>
+                                ... Prostate cancer.... Ultrasound and PSA<br>
+                                ... Colo-rectal (Intestine) cancer.... Colonoscopy(where available) , Abdominal scan and AFP<br>
+                                .. Cervical cancer... PAP smear,<br>
+                                .. Liver cancer... Hepatitis B and C screening, liver ultrasound, AFP<br>
+                                ... Lung cancer... Chest Xray
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="cancer-screening">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="cancer-screening">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 7 - PCOS -->
+                    <article class="blog-post">
+                        <img src="img/ovarian.jpg" alt="PCOS Awareness" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 12 Comments</span> -->
+                            </div>
+                            <h2 class="post-title"><a href="#">POLYCYSTIC OVARIAN SYNDROME (PCOS)</a></h2>
+                            <p class="post-excerpt">
+                                Have you ever skipped your menses for one month, two months or MORE without being pregnant? And this has been recurring often? You might just have a condition called polycystic ovarian syndrome (PCOS).
+                            </p>
+                            <p class="post-excerpt">
+                                Women with this condition experience irregular menstruation and sometimes difficulties in getting pregnant. Some women with this medical condition may also have masculine hair growth especially facial, abdominal and leg hairs.
+                            </p>
+                            <p class="post-excerpt">
+                                The diagnosis is confirmed by doing a transvaginal ultrasound scan which confirms the polycystic ovaries. And also some hormonal and metabolic tests that help to establish the diagnosis. This condition is treatable including the fertility challenges, the menstrual irregularity and the abnormal body hair growths. For further information, please chat us up on the WhatsApp portal or visit any of our offices.
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="pcos">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="pcos">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 8 - Health Check-ups -->
+                    <article class="blog-post">
+                        <img src="img/checkup.jpg" alt="Health Check-up" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                                <!-- <span><i class="far fa-comments"></i> 12 Comments</span> -->
+                            </div>
+                            <h2 class="post-title"><a href="#">WHY DO YOU NEED REGULAR HEALTH CHECK UP?</a></h2>
+                            <p class="post-excerpt">
+                                Regular health checkups are crucial for longevity in the world of today. This is because these checks enable early detection of diseases, which increases the chances of successful treatment and recovery. No age is excluded when it comes to medical checks.
+                            </p>
+                            <p class="post-excerpt">
+                                They also facilitate preventive care by providing a platform for doctors to offer advice on healthy habits and lifestyle choices which helps in preventing the occurrence of diseases in the first place.
+                            </p>
+                            <p class="post-excerpt">
+                                Secondly, routine medical check ups also facilitate early detection of diseases. This is important because many diseases show no outward signs or symptoms at the early stages. When diseases are detected early it offers opportunities to treat them successfully and prolong life.
+                            </p>
+                            <p class="post-excerpt">
+                                Thirdly, for those with existing conditions and diseases such as diabetes, hypertension, cancer, medical check ups are essential in monitoring the progression of the diseases while adjusting medications and treatment plans to avoid complications and early death.
+                            </p>
+                            <p class="post-excerpt">
+                                Finally, check ups reduce your spending on healthcare issues since it is cheaper to prevent diseases than treating and managing chronic and complicated disease states. In addition check up provides you the opportunity for building trusting relationship between you and your Healthcare providers who can create for you a personalized health care plan based on your unique lifestyle and risk factors.
+                            </p>
+                            <p class="post-excerpt">
+                                Need a medical check up? Visit any of our offices today.
+                            </p>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="checkup">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="checkup">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
                     
                     <!-- Newsletter Section -->
                     <div class="newsletter-section">
@@ -876,28 +945,6 @@
                             </form>
                         </div>
                     </div>
-                    
-                    <!-- Diagnostics Section -->
-                    <section id="diagnostics" class="category-section">
-                        <h2 class="category-title">Diagnostics</h2>
-                        
-                        <!-- Blog Post 8 -->
-                        <article class="blog-post">
-                            <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blog Post" class="post-image">
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span><i class="far fa-user"></i> Dr. Michael Adebayo</span>
-                                    <span><i class="far fa-calendar"></i> February 20, 2023</span>
-                                    <span><i class="far fa-comments"></i> 5 Comments</span>
-                                </div>
-                                <h2 class="post-title"><a href="#">Understanding Laboratory Test Results</a></h2>
-                                <p class="post-excerpt">
-                                    Laboratory tests provide crucial information about your health. This guide helps you understand common test results and what they mean for your wellbeing...
-                                </p>
-                                <!-- <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a> -->
-                            </div>
-                        </article>
-                    </section>
                     
                     <!-- Pagination -->
                     <nav aria-label="Blog pagination">
@@ -926,9 +973,9 @@
                     <a href="index.html" class="navbar-brand">
                         <h1 class="h1 text-primary mb-0">Sonoscan<span class="text-white">Lab</span></h1>
                     </a>
-                    <p class="fs-5 mb-4">Your trusted partner in health and wellness, providing comprehensive medical services with cutting-edge technology and compassionate care.</p>
+                    <p class="fs-5 mb-4">Your trusted partner in health and wellness, providing comprehensive medical services and compassionate care.</p>
                     <p><i class="fa fa-map-marker-alt me-2"></i>Sonoscan, Abuja</p>
-                    <p><i class="fa fa-phone-alt me-2"></i>+234123456789</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+2347031004818</p>
                     <p><i class="fa fa-envelope me-2"></i>info@sonoscanlab.ng</p>
                     <div class="d-flex mt-4">
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -978,10 +1025,6 @@
     <!-- Copyright End -->
 
 
-    <!-- Back to Top
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a> -->
-
-
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -997,95 +1040,107 @@
     <!-- Blog Page JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Category navigation functionality
-            const categoryLinks = document.querySelectorAll('.category-link, .category-nav-link');
-            const categorySections = document.querySelectorAll('.category-section');
+            // Like/Dislike functionality
+            const likeButtons = document.querySelectorAll('.like-btn');
+            const dislikeButtons = document.querySelectorAll('.dislike-btn');
             
-            // Function to highlight active category
-            function setActiveCategory(categoryId) {
-                // Remove active class from all categories
-                categorySections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                // Add active class to target category
-                const targetSection = document.getElementById(categoryId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
+            // Load saved reactions from localStorage
+            function loadReactions() {
+                likeButtons.forEach(button => {
+                    const postId = button.getAttribute('data-post');
+                    const likes = localStorage.getItem(`${postId}-likes`) || 0;
+                    const dislikes = localStorage.getItem(`${postId}-dislikes`) || 0;
+                    const userReaction = localStorage.getItem(`${postId}-user-reaction`);
                     
-                    // Scroll to the category section with offset for fixed header
-                    const headerHeight = document.querySelector('.navbar').offsetHeight;
-                    const categoryNav = document.querySelector('.category-nav');
-                    const categoryNavHeight = categoryNav && window.getComputedStyle(categoryNav).display !== 'none' ? categoryNav.offsetHeight : 0;
-                    const sectionPosition = targetSection.offsetTop - headerHeight - categoryNavHeight - 20;
+                    button.querySelector('.reaction-count').textContent = likes;
                     
-                    window.scrollTo({
-                        top: sectionPosition,
-                        behavior: 'smooth'
-                    });
-                }
-                
-                // Update active state in category navigation
-                categoryLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('data-category') === categoryId) {
-                        link.classList.add('active');
+                    const correspondingDislikeBtn = document.querySelector(`.dislike-btn[data-post="${postId}"]`);
+                    correspondingDislikeBtn.querySelector('.reaction-count').textContent = dislikes;
+                    
+                    if (userReaction === 'like') {
+                        button.classList.add('active');
+                        correspondingDislikeBtn.classList.remove('active');
+                    } else if (userReaction === 'dislike') {
+                        correspondingDislikeBtn.classList.add('active');
+                        button.classList.remove('active');
                     }
                 });
             }
             
-            // Add click event to category links
-            categoryLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const categoryId = this.getAttribute('data-category');
-                    setActiveCategory(categoryId);
+            // Handle like button click
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const postId = this.getAttribute('data-post');
+                    const currentLikes = parseInt(localStorage.getItem(`${postId}-likes`) || 0);
+                    const currentDislikes = parseInt(localStorage.getItem(`${postId}-dislikes`) || 0);
+                    const userReaction = localStorage.getItem(`${postId}-user-reaction`);
                     
-                    // Update URL hash without scrolling
-                    history.pushState(null, null, `#${categoryId}`);
-                });
-            });
-            
-            // Check URL hash on page load
-            if (window.location.hash) {
-                const categoryId = window.location.hash.substring(1);
-                setActiveCategory(categoryId);
-            }
-            
-            // Intersection Observer to highlight category in view
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -60% 0px',
-                threshold: 0
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const categoryId = entry.target.id;
-                        categoryLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('data-category') === categoryId) {
-                                link.classList.add('active');
-                            }
-                        });
+                    const correspondingDislikeBtn = document.querySelector(`.dislike-btn[data-post="${postId}"]`);
+                    
+                    if (userReaction === 'like') {
+                        // User is removing their like
+                        localStorage.setItem(`${postId}-likes`, currentLikes - 1);
+                        localStorage.removeItem(`${postId}-user-reaction`);
+                        this.classList.remove('active');
+                    } else {
+                        // User is adding a like
+                        let newLikes = currentLikes + 1;
+                        
+                        // If user previously disliked, remove that dislike
+                        if (userReaction === 'dislike') {
+                            localStorage.setItem(`${postId}-dislikes`, currentDislikes - 1);
+                            correspondingDislikeBtn.classList.remove('active');
+                            correspondingDislikeBtn.querySelector('.reaction-count').textContent = currentDislikes - 1;
+                        }
+                        
+                        localStorage.setItem(`${postId}-likes`, newLikes);
+                        localStorage.setItem(`${postId}-user-reaction`, 'like');
+                        this.classList.add('active');
                     }
+                    
+                    // Update the like count display
+                    this.querySelector('.reaction-count').textContent = localStorage.getItem(`${postId}-likes`) || 0;
                 });
-            }, observerOptions);
-            
-            // Observe each category section
-            categorySections.forEach(section => {
-                observer.observe(section);
             });
             
-            // Adjust category nav position on resize
-            window.addEventListener('resize', function() {
-                const categoryNav = document.querySelector('.category-nav');
-                if (categoryNav) {
-                    const headerHeight = document.querySelector('.navbar').offsetHeight;
-                    categoryNav.style.top = `${headerHeight}px`;
-                }
+            // Handle dislike button click
+            dislikeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const postId = this.getAttribute('data-post');
+                    const currentLikes = parseInt(localStorage.getItem(`${postId}-likes`) || 0);
+                    const currentDislikes = parseInt(localStorage.getItem(`${postId}-dislikes`) || 0);
+                    const userReaction = localStorage.getItem(`${postId}-user-reaction`);
+                    
+                    const correspondingLikeBtn = document.querySelector(`.like-btn[data-post="${postId}"]`);
+                    
+                    if (userReaction === 'dislike') {
+                        // User is removing their dislike
+                        localStorage.setItem(`${postId}-dislikes`, currentDislikes - 1);
+                        localStorage.removeItem(`${postId}-user-reaction`);
+                        this.classList.remove('active');
+                    } else {
+                        // User is adding a dislike
+                        let newDislikes = currentDislikes + 1;
+                        
+                        // If user previously liked, remove that like
+                        if (userReaction === 'like') {
+                            localStorage.setItem(`${postId}-likes`, currentLikes - 1);
+                            correspondingLikeBtn.classList.remove('active');
+                            correspondingLikeBtn.querySelector('.reaction-count').textContent = currentLikes - 1;
+                        }
+                        
+                        localStorage.setItem(`${postId}-dislikes`, newDislikes);
+                        localStorage.setItem(`${postId}-user-reaction`, 'dislike');
+                        this.classList.add('active');
+                    }
+                    
+                    // Update the dislike count display
+                    this.querySelector('.reaction-count').textContent = localStorage.getItem(`${postId}-dislikes`) || 0;
+                });
             });
+            
+            // Initialize reactions on page load
+            loadReactions();
         });
     </script>
 </body>
