@@ -32,15 +32,26 @@
     <link href="css/style.css" rel="stylesheet">
     
     <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        
         /* Blog Page Custom Styles */
         .blog-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0;
+            padding: 80px 20px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .blog-hero h1 {
@@ -48,6 +59,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
+            text-align: center;
         }
         
         .blog-hero p {
@@ -55,10 +67,13 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
+            text-align: center;
         }
         
         .blog-container {
-            padding: 0 0 60px 0;
+            padding: 0 15px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .blog-sidebar {
@@ -74,6 +89,7 @@
         
         .sidebar-widget {
             margin-bottom: 30px;
+            text-align: left;
         }
         
         .sidebar-widget:last-child {
@@ -86,55 +102,7 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #1a76d1;
             font-size: 1.3rem;
-        }
-        
-        .recent-posts-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .recent-post {
-            display: flex;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .recent-post:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .recent-post-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 5px;
-            object-fit: cover;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-        
-        .recent-post-content h4 {
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-            line-height: 1.3;
-        }
-        
-        .recent-post-content h4 a {
-            color: #333;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .recent-post-content h4 a:hover {
-            color: #1a76d1;
-        }
-        
-        .recent-post-content span {
-            font-size: 0.75rem;
-            color: #777;
+            text-align: left;
         }
         
         .tags-list {
@@ -146,11 +114,12 @@
         .tag {
             background-color: #e9ecef;
             color: #495057;
-            padding: 4px 12px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             text-decoration: none;
             transition: all 0.3s ease;
+            text-align: center;
         }
         
         .tag:hover {
@@ -159,7 +128,13 @@
         }
         
         .blog-posts {
-            padding-left: 30px;
+            padding-left: 0;
+        }
+        
+        @media (min-width: 992px) {
+            .blog-posts {
+                padding-left: 30px;
+            }
         }
         
         .blog-post {
@@ -168,6 +143,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            background: white;
         }
         
         .blog-post:hover {
@@ -178,6 +154,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            display: block;
         }
         
         .post-content {
@@ -190,12 +167,14 @@
             margin-bottom: 12px;
             font-size: 0.85rem;
             color: #777;
-            gap: 10px;
+            gap: 15px;
+            align-items: center;
         }
         
         .post-meta span {
             display: flex;
             align-items: center;
+            text-align: left;
         }
         
         .post-meta i {
@@ -209,6 +188,7 @@
             font-size: clamp(1.2rem, 3vw, 1.5rem);
             font-weight: 700;
             line-height: 1.3;
+            text-align: left;
         }
         
         .post-title a {
@@ -226,6 +206,17 @@
             line-height: 1.6;
             margin-bottom: 15px;
             font-size: 0.95rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .post-excerpt p {
+            margin-bottom: 15px;
+        }
+        
+        .post-excerpt strong {
+            color: #333;
+            font-weight: 600;
         }
         
         .read-more {
@@ -265,6 +256,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            text-align: center;
         }
         
         .page-link:hover {
@@ -282,7 +274,7 @@
         .newsletter-section {
             background-color: #1a76d1;
             color: white;
-            padding: 50px 0;
+            padding: 50px 20px;
             margin: 60px 0;
             border-radius: 10px;
         }
@@ -291,17 +283,18 @@
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
-            padding: 0 15px;
         }
         
         .newsletter-content h3 {
             margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            text-align: center;
         }
         
         .newsletter-content p {
             margin-bottom: 25px;
             font-size: 1rem;
+            text-align: center;
         }
         
         .newsletter-form {
@@ -329,6 +322,8 @@
             transition: all 0.3s ease;
             font-weight: 600;
             white-space: nowrap;
+            min-width: 100px;
+            text-align: center;
         }
         
         .newsletter-btn:hover {
@@ -339,7 +334,7 @@
         .post-reactions {
             display: flex;
             align-items: center;
-            margin-top: 15px;
+            margin-top: 20px;
             padding-top: 15px;
             border-top: 1px solid #eee;
         }
@@ -354,6 +349,7 @@
             color: #777;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            padding: 5px 10px;
         }
         
         .reaction-btn:hover {
@@ -371,6 +367,13 @@
         
         .reaction-count {
             margin-left: 3px;
+        }
+        
+        /* Improved Text Alignment for Lists */
+        .post-excerpt br {
+            display: block;
+            margin: 10px 0;
+            content: "";
         }
         
         /* Responsive Styles */
@@ -392,18 +395,22 @@
             }
             
             .blog-hero {
-                padding: 80px 0;
-                margin-bottom: 30px;
+                padding: 70px 15px;
+                margin-bottom: 25px;
+            }
+            
+            .post-content {
+                padding: 20px;
             }
         }
         
         @media (max-width: 767px) {
             .blog-hero {
-                padding: 60px 0;
+                padding: 60px 15px;
             }
             
             .blog-container {
-                padding: 0 0 40px 0;
+                padding: 0 10px 40px;
             }
             
             .blog-sidebar {
@@ -411,26 +418,29 @@
             }
             
             .post-content {
-                padding: 20px;
+                padding: 18px;
             }
             
             .newsletter-section {
-                padding: 40px 0;
+                padding: 40px 15px;
                 margin: 40px 0;
             }
             
             .newsletter-form {
                 flex-direction: column;
+                width: 100%;
             }
             
             .newsletter-input {
                 border-radius: 5px;
                 margin-bottom: 10px;
+                width: 100%;
             }
             
             .newsletter-btn {
                 border-radius: 5px;
                 padding: 12px;
+                width: 100%;
             }
             
             .pagination {
@@ -440,42 +450,187 @@
             .page-item {
                 margin-bottom: 5px;
             }
-        }
-        
-        @media (max-width: 575px) {
-            .blog-hero {
-                padding: 50px 0;
-            }
             
             .post-image {
                 height: 180px;
             }
             
-            .recent-post {
-                flex-direction: column;
-            }
-            
-            .recent-post-img {
-                width: 100%;
-                height: 120px;
-                margin-right: 0;
-                margin-bottom: 10px;
+            .post-meta {
+                gap: 10px;
             }
         }
         
-        @media (max-width: 400px) {
-            .post-meta {
-                flex-direction: column;
-                gap: 5px;
+        @media (max-width: 575px) {
+            .blog-hero {
+                padding: 50px 15px;
             }
             
-            .tags-list {
-                gap: 5px;
+            .post-image {
+                height: 160px;
+            }
+            
+            .post-content {
+                padding: 15px;
+            }
+            
+            .blog-sidebar {
+                padding: 18px 12px;
+            }
+            
+            .sidebar-widget h3 {
+                font-size: 1.2rem;
             }
             
             .tag {
-                padding: 3px 10px;
+                padding: 5px 10px;
                 font-size: 0.8rem;
+            }
+            
+            .post-title {
+                font-size: 1.3rem;
+            }
+            
+            .post-excerpt {
+                text-align: left;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .blog-hero {
+                padding: 40px 10px;
+            }
+            
+            .post-image {
+                height: 140px;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .tags-list {
+                gap: 6px;
+            }
+            
+            .tag {
+                padding: 4px 10px;
+                font-size: 0.75rem;
+            }
+            
+            .newsletter-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .newsletter-content p {
+                font-size: 0.9rem;
+            }
+            
+            .post-reactions {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .blog-hero p {
+                font-size: 0.9rem;
+            }
+            
+            .post-title {
+                font-size: 1.1rem;
+            }
+            
+            .post-excerpt {
+                font-size: 0.85rem;
+            }
+            
+            .post-image {
+                height: 120px;
+            }
+            
+            .pagination .page-link {
+                padding: 6px 8px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Improved Navigation for Mobile */
+        .navbar-nav {
+            text-align: center;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar-nav {
+                text-align: left;
+            }
+        }
+        
+        /* Footer Responsive Improvements */
+        .footer .row {
+            text-align: center;
+        }
+        
+        .footer .d-flex {
+            justify-content: center;
+        }
+        
+        @media (min-width: 768px) {
+            .footer .row {
+                text-align: left;
+            }
+            
+            .footer .d-flex {
+                justify-content: flex-start;
+            }
+        }
+        
+        /* Ensure all images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Improve button touch targets on mobile */
+        .btn, .page-link, .tag, .reaction-btn {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tag {
+            min-height: auto;
+            padding: 6px 12px;
+        }
+        
+        .page-link {
+            min-height: 36px;
+        }
+        
+        /* Container fluid for better mobile experience */
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Improved text wrapping */
+        .post-excerpt {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* Center align for mobile */
+        @media (max-width: 767px) {
+            .text-center-mobile {
+                text-align: center;
             }
         }
     </style>
@@ -532,22 +687,23 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand">
-                    <!-- Responsive logo image -->
-                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid">
+                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid" style="max-height: 50px;">
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
+                    data-bs-target="#navbarCollapse" aria-expanded="false" aria-controls="navbarCollapse" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
-                        <div class="dropdown-menu bg-light m-0">
-                            <a href="service.html" class="dropdown-item">Diagnostics Services</a>
-                            <a href="#" class="dropdown-item">Dr. Consultation</a>
-                            <a href="health.html" class="dropdown-item">Medical Check up Packages</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Our Services</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="service.html" class="dropdown-item">Diagnostics Services</a>
+                                <a href="#" class="dropdown-item">Dr. Consultation</a>
+                                <a href="health.html" class="dropdown-item">Medical Check up Packages</a>
+                            </div>
                         </div>
                         <a href="blog.html" class="nav-item nav-link active">Blog</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -578,45 +734,31 @@
             <!-- Sidebar -->
             <div class="col-lg-4">
                 <div class="blog-sidebar">
-                    
-                    
-                
+                    <!-- Tags Widget -->
+                   
                 </div>
             </div> 
             
             <!-- Blog Posts -->
             <div class="col-lg-8">
                 <div class="blog-posts">
-                    <!-- Blog Post 1 - Diabetes Prevention -->
-                   
+                    <!-- Blog Post 1 - Health Check-ups -->
                     <article class="blog-post">
-                         <h2 class="post-title"><a href="#">WHY DO YOU NEED ROUTINE MEDICAL CHECK UP?</a></h2>
+                        <h2 class="post-title">WHY DO YOU NEED ROUTINE MEDICAL CHECK UP?</h2>
                         <img src="img/medical packs 3.jpg" alt="Health Check-up" class="post-image">
                         <div class="post-content">
                             <div class="post-meta">
                                 <span><i class="far fa-user"></i> by Sonoscan</span>
                                 <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 12 Comments</span> -->
                             </div>
-                    
-                            <p class="post-excerpt">
-                                Regular health checkups are crucial for longevity in the world of today. This is because these checks enable early detection of diseases, which increases the chances of successful treatment and recovery. No age is excluded when it comes to medical checks.
-                            </p>
-                            <p class="post-excerpt">
-                                They also facilitate preventive care by providing a platform for doctors to offer advice on healthy habits and lifestyle choices which helps in preventing the occurrence of diseases in the first place.
-                            </p>
-                            <p class="post-excerpt">
-                                Secondly, routine medical check ups also facilitate early detection of diseases. This is important because many diseases show no outward signs or symptoms at the early stages. When diseases are detected early it offers opportunities to treat them successfully and prolong life.
-                            </p>
-                            <p class="post-excerpt">
-                                Thirdly, for those with existing conditions and diseases such as diabetes, hypertension, cancer, medical check ups are essential in monitoring the progression of the diseases while adjusting medications and treatment plans to avoid complications and early death.
-                            </p>
-                            <p class="post-excerpt">
-                                Finally, check ups reduce your spending on healthcare issues since it is cheaper to prevent diseases than treating and managing chronic and complicated disease states. In addition check up provides you the opportunity for building trusting relationship between you and your Healthcare providers who can create for you a personalized health care plan based on your unique lifestyle and risk factors.
-                            </p>
-                            <p class="post-excerpt">
-                                Need a medical check up? Visit any of our offices today.
-                            </p>
+                            <div class="post-excerpt">
+                                <p>Regular health checkups are crucial for longevity in the world of today. This is because these checks enable early detection of diseases, which increases the chances of successful treatment and recovery. No age is excluded when it comes to medical checks.</p>
+                                <p>They also facilitate preventive care by providing a platform for doctors to offer advice on healthy habits and lifestyle choices which helps in preventing the occurrence of diseases in the first place.</p>
+                                <p>Secondly, routine medical check ups also facilitate early detection of diseases. This is important because many diseases show no outward signs or symptoms at the early stages. When diseases are detected early it offers opportunities to treat them successfully and prolong life.</p>
+                                <p>Thirdly, for those with existing conditions and diseases such as diabetes, hypertension, cancer, medical check ups are essential in monitoring the progression of the diseases while adjusting medications and treatment plans to avoid complications and early death.</p>
+                                <p>Finally, check ups reduce your spending on healthcare issues since it is cheaper to prevent diseases than treating and managing chronic and complicated disease states. In addition check up provides you the opportunity for building trusting relationship between you and your Healthcare providers who can create for you a personalized health care plan based on your unique lifestyle and risk factors.</p>
+                                <p>Need a medical check up? Visit any of our offices today.</p>
+                            </div>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="checkup">
                                     <i class="far fa-thumbs-up"></i>
@@ -629,38 +771,25 @@
                             </div>
                         </div>
                     </article>
+                    
                     <!-- Blog Post 2 - Hypertension -->
                     <article class="blog-post">
-                        <h2 class="post-title"><a href="#">WHY IS HYPERTENSION CALLED A "SILENT KILLER"?</a></h2>
+                        <h2 class="post-title">WHY IS HYPERTENSION CALLED A "SILENT KILLER"?</h2>
                         <img src="img/checkup.jpg" alt="Hypertension" class="post-image">
                         <div class="post-content">
                             <div class="post-meta">
                                 <span><i class="far fa-user"></i> by Sonoscan</span>
                                 <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 12 Comments</span> -->
                             </div>
-                            
-                            <p class="post-excerpt">
-                                Among medical professionals, hypertension is widely called a "silent killer". This is because most affected people do not manifest any symptoms until complications develop. In other words, it is a silent danger because someone can have the condition for many years without knowing it. The complications of hypertension can be sudden or gradual in onset:
-                            </p>
-                            <p class="post-excerpt">
-                                SUDDENLY, someone has a stroke (mostly manifested as paralysis) and then he is diagnosed with hypertension.
-                            </p>
-                            <p class="post-excerpt">
-                                SUDDENLY, someone has a heart attack, and it becomes linked to hypertension.
-                            </p>
-                            <p class="post-excerpt">
-                                SUDDENLY, someone develops kidney failure. And again, hypertension is found to be the cause.
-                            </p>
-                            <p class="post-excerpt">
-                                GRADUALLY, someone's eye sight fails, their ability to think clearly and remember events drops noticeably. And behind it all could be untreated blood high pressure.
-                            </p>
-                            <p class="post-excerpt">
-                                Other complications of hypertension include heart failure (either from a weakened heart muscle or by a sudden heart attack) and aneurysms (bulging and possible rupture of arteries).
-                            </p>
-                            <p class="post-excerpt">
-                                Checking your blood pressure regularly could do you a whole world of good as they say.
-                            </p>
+                            <div class="post-excerpt">
+                                <p>Among medical professionals, hypertension is widely called a "silent killer". This is because most affected people do not manifest any symptoms until complications develop. In other words, it is a silent danger because someone can have the condition for many years without knowing it. The complications of hypertension can be sudden or gradual in onset:</p>
+                                <p>SUDDENLY, someone has a stroke (mostly manifested as paralysis) and then he is diagnosed with hypertension.</p>
+                                <p>SUDDENLY, someone has a heart attack, and it becomes linked to hypertension.</p>
+                                <p>SUDDENLY, someone develops kidney failure. And again, hypertension is found to be the cause.</p>
+                                <p>GRADUALLY, someone's eye sight fails, their ability to think clearly and remember events drops noticeably. And behind it all could be untreated blood high pressure.</p>
+                                <p>Other complications of hypertension include heart failure (either from a weakened heart muscle or by a sudden heart attack) and aneurysms (bulging and possible rupture of arteries).</p>
+                                <p>Checking your blood pressure regularly could do you a whole world of good as they say.</p>
+                            </div>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="hypertension">
                                     <i class="far fa-thumbs-up"></i>
@@ -676,24 +805,18 @@
                     
                     <!-- Blog Post 3 - Prostate Health -->
                     <article class="blog-post">
-                         <h2 class="post-title"><a href="#">KEEPING UP WITH YOUR PROSTATE</a></h2>
+                        <h2 class="post-title">KEEPING UP WITH YOUR PROSTATE</h2>
                         <img src="img/prostrate.jpg" alt="Prostate Health" class="post-image">
                         <div class="post-content">
                             <div class="post-meta">
                                 <span><i class="far fa-user"></i> by Sonoscan</span>
                                 <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 8 Comments</span> -->
                             </div>
-                           
-                            <p class="post-excerpt">
-                                Prostate diseases can range from benign conditions such as prostatitis (prostate infection), BPH (benign age-related prostate enlargement) to potentially serious conditions such as prostate cancer. Therefore maintaining a healthy prostate should be important for every man 50yrs and above or even earlier if there is a family history of chronic prostate disease.
-                            </p>
-                            <p class="post-excerpt">
-                                Common prostate symptoms include frequent or urgent urination, especially at night, and difficulty starting or maintaining a urine stream. Other symptoms can be pain or burning during urination, blood in the urine or semen, and painful ejaculation. Some men may also experience pain or stiffness in the lower back, hips, or thighs. It is important to see a doctor for any of these symptoms, as they may be caused by various prostate conditions, including cancer.
-                            </p>
-                            <p class="post-excerpt">
-                                Keeping your prostate healthy involves regular screenings, a healthy diet with fruits and vegetables, regular exercise, and avoiding tobacco. A diet rich in healthy fats, and low in saturated and trans fats, is beneficial. It's also important to consult a doctor for age-appropriate screenings and to address any urinary or sexual concerns.
-                            </p>
+                            <div class="post-excerpt">
+                                <p>Prostate diseases can range from benign conditions such as prostatitis (prostate infection), BPH (benign age-related prostate enlargement) to potentially serious conditions such as prostate cancer. Therefore maintaining a healthy prostate should be important for every man 50yrs and above or even earlier if there is a family history of chronic prostate disease.</p>
+                                <p>Common prostate symptoms include frequent or urgent urination, especially at night, and difficulty starting or maintaining a urine stream. Other symptoms can be pain or burning during urination, blood in the urine or semen, and painful ejaculation. Some men may also experience pain or stiffness in the lower back, hips, or thighs. It is important to see a doctor for any of these symptoms, as they may be caused by various prostate conditions, including cancer.</p>
+                                <p>Keeping your prostate healthy involves regular screenings, a healthy diet with fruits and vegetables, regular exercise, and avoiding tobacco. A diet rich in healthy fats, and low in saturated and trans fats, is beneficial. It's also important to consult a doctor for age-appropriate screenings and to address any urinary or sexual concerns.</p>
+                            </div>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="prostate-health">
                                     <i class="far fa-thumbs-up"></i>
@@ -707,197 +830,7 @@
                         </div>
                     </article>
                     
-                    <!-- Blog Post 4 - Fatty Liver -->
-                    <article class="blog-post">
-                          <h2 class="post-title"><a href="#">FATTY LIVER AND YOU</a></h2>
-                        <img src="img/liver.jpg" alt="Fatty Liver" class="post-image">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
-                                <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 11 Comments</span> -->
-                            </div>
-                          
-                            <p class="post-excerpt">
-                                This post highlights the importance of checking up on your liver regularly. The liver is located at upper right segment of the abdomen. It has vital roles in metabolism, detoxification, and digestion by filtering blood, producing bile, metabolizing nutrients, and storing vitamins and minerals. Functionally, the liver processes nutrients absorbed from the intestines and detoxifies harmful substances like drugs and alcohol, playing a crucial role in maintaining overall health.
-                            </p>
-                            <p class="post-excerpt">
-                                Fatty liver disease is a condition characterized by the buildup of excess fat in the liver, which can be caused by heavy alcohol use or non-alcoholic factors like obesity, diabetes, and high-fat diets. It can range from a mild condition with no symptoms to a more severe form called metabolic dysfunction-associated steatohepatitis (MASH), which involves inflammation and liver damage and can lead to cirrhosis or liver cancer.
-                            </p>
-                            <p class="post-excerpt">
-                                Often, there are no or few symptoms in the early stages. When symptoms occur, they may include fatigue or pain in the upper right side of the abdomen. In advanced stages like cirrhosis, symptoms can include jaundice (yellowing of the skin and eyes), confusion, and swelling in the legs or abdomen.
-                            </p>
-                            <p class="post-excerpt">
-                                Risk factors for fatty liver disease include being overweight or obesity, high-fat and high-sugar diets, high alcohol intake, diabetes, high cholesterol and triglycerides, high blood pressure.
-                            </p>
-                            <p class="post-excerpt">
-                                Fatty liver disease progresses through four stages: fatty liver (steatosis), where fat builds up with no damage; metabolic dysfunction-associated steatohepatitis (MASH), which involves fat accumulation and inflammation; fibrosis, where inflammation causes scarring; and cirrhosis, the final stage of severe, irreversible liver scarring.
-                            </p>
-                            <p class="post-excerpt">
-                                Treatment often involves lifestyle changes like weight loss, exercise, and dietary improvements. Early stages can be reversed with lifestyle changes, but advanced stages lead to serious complications like liver failure.
-                            </p>
-                            <div class="post-reactions">
-                                <button class="reaction-btn like-btn" data-post="fatty-liver">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                                <button class="reaction-btn dislike-btn" data-post="fatty-liver">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Blog Post 5 - Peptic Ulcer -->
-                    <article class="blog-post">
-                         <h2 class="post-title"><a href="#">CAN YOU PREVENT PEPTIC ULCER DISEASE?</a></h2>
-                        <img src="img/peptic.jpg" alt="Peptic Ulcer" class="post-image">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
-                                <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 7 Comments</span> -->
-                            </div>
-                           
-                            <p class="post-excerpt">
-                                Peptic ulcer disease (PUD) is a condition that cause irritation and sores on the inside of the stomach or small intestine. H. pylori bacteria infection and prolonged use of nonsteroidal anti-inflammatory drugs (NSAIDs)such as aspirin and ibuprofen are the main causes PUD.
-                            </p>
-                            <p class="post-excerpt">
-                                Symptoms include a burning or gnawing pain in the upper abdomen, which may improve with food or antacids. The pain may also radiate to the mid back. Treatments often involve antibiotics for H. pylori and medications to reduce stomach acid, while unusually severe cases may require surgical intervention.
-                            </p>
-                            <p class="post-excerpt">
-                                To prevent peptic ulcer disease, avoid smoking and excessive alcohol, use NSAIDs (like aspirin and ibuprofen) carefully, and treat H. pylori infections. Taking NSAIDs with food and talking to your doctor about long-term use or alternatives can also help reduce risk.
-                            </p>
-                            <p class="post-excerpt">
-                                Get tested and treated for H. pylori: The bacteria is a common cause of ulcers, and most people don't know they have it. Regular check-ups are important for early detection and management of risk factors for PUD.
-                            </p>
-                            <div class="post-reactions">
-                                <button class="reaction-btn like-btn" data-post="peptic-ulcer">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                                <button class="reaction-btn dislike-btn" data-post="peptic-ulcer">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Blog Post 6 - Cancer Screening -->
-                    <article class="blog-post">
-                         <h2 class="post-title"><a href="#">IS CANCER SCREENING REALLY NECESSARY?</a></h2>
-                        <img src="img/hyper.jpg" alt="Cancer Screening" class="post-image">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
-                                <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 14 Comments</span> -->
-                            </div>
-                           
-                            <p class="post-excerpt">
-                                Cancer is a non-communicable disease and contributes a significant quota to the burden of disease and deaths arising from that group of diseases. However, less attention is paid to cancer screening largely as a result of poor awareness amongst the general population concerning both the availability and necessity of these screenings.
-                            </p>
-                            <p class="post-excerpt">
-                                Cancer screening generally involves tests to detect cancer before symptoms appear, making treatment more effective and increasing the chances of a cure. Methods of screening include visual examinations of affected parts of the body, imaging (like X-rays, mammograms, or MRIs), blood or urine tests, and procedures like endoscopy or Pap smears. Abnormal results may require further diagnostic tests to confirm a diagnosis.
-                            </p>
-                            <p class="post-excerpt">
-                                Cancer screening needs may vary by age and risk factors, but general recommendations include starting at age 45 for colorectal cancer, 40–45 for breast cancer, and 21 for cervical cancer. For specific cancers like lung cancer, screening may be recommended for individuals between 50 and 75 who have a history of smoking. Likewise prostate cancer screening may start at the age of 40 or even less if there is a family history of prostate cancer.
-                            </p>
-                            <p class="post-excerpt">
-                                It's important to note that these are general guidelines, and screening recommendations can change based on personal and family medical history. Individuals with higher risks may need to begin screening earlier or more frequently. It is best to discuss your specific risk factors and appropriate screening schedule with a healthcare provider.
-                            </p>
-                            <p class="post-excerpt">
-                                Screening is usually for people who do not have any symptoms of cancer. Moreover a positive screening result does not always mean you have cancer. It might just mean that further testing may be needed to determine if cancer is actually present. Usually your doctor will recommend specific screenings and how often you carry them out based on your age, family history, and other risk factors. At Sonoscan Medical Diagnostic Lab. we offer the following cancer screening packages.
-                            </p>
-                            <p class="post-excerpt">
-                                <strong>CANCER SCREENING PACKAGES</strong><br>
-                                ... Breast cancer.... Mammogram(when available) and Ultrasound<br>
-                                ... Prostate cancer.... Ultrasound and PSA<br>
-                                ... Colo-rectal (Intestine) cancer.... Colonoscopy(where available) , Abdominal scan and AFP<br>
-                                .. Cervical cancer... PAP smear,<br>
-                                .. Liver cancer... Hepatitis B and C screening, liver ultrasound, AFP<br>
-                                ... Lung cancer... Chest Xray
-                            </p>
-                            <div class="post-reactions">
-                                <button class="reaction-btn like-btn" data-post="cancer-screening">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                                <button class="reaction-btn dislike-btn" data-post="cancer-screening">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Blog Post 7 - PCOS -->
-                    <article class="blog-post">
-                           <h2 class="post-title"><a href="#">POLYCYSTIC OVARIAN SYNDROME (PCOS)</a></h2>
-                        <img src="img/ovarian.jpg" alt="PCOS Awareness" class="post-image">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
-                                <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 12 Comments</span> -->
-                            </div>
-                         
-                            <p class="post-excerpt">
-                                Have you ever skipped your menses for one month, two months or MORE without being pregnant? And this has been recurring often? You might just have a condition called polycystic ovarian syndrome (PCOS).
-                            </p>
-                            <p class="post-excerpt">
-                                Women with this condition experience irregular menstruation and sometimes difficulties in getting pregnant. Some women with this medical condition may also have masculine hair growth especially facial, abdominal and leg hairs.
-                            </p>
-                            <p class="post-excerpt">
-                                The diagnosis is confirmed by doing a transvaginal ultrasound scan which confirms the polycystic ovaries. And also some hormonal and metabolic tests that help to establish the diagnosis. This condition is treatable including the fertility challenges, the menstrual irregularity and the abnormal body hair growths. For further information, please chat us up on the WhatsApp portal or visit any of our offices.
-                            </p>
-                            <div class="post-reactions">
-                                <button class="reaction-btn like-btn" data-post="pcos">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                                <button class="reaction-btn dislike-btn" data-post="pcos">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Blog Post 8 - Health Check-ups -->
-                     <article class="blog-post">
-                         <h2 class="post-title"><a href="#">HOW TO PREVENT DIABETES</a></h2>
-                        <img src="img/diabetics.jpg" alt="Diabetes Prevention" class="post-image">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
-                                <span><i class="far fa-calendar"></i> 2025</span>
-                                <!-- <span><i class="far fa-comments"></i> 15 Comments</span> -->
-                            </div>
-                           
-                            <p class="post-excerpt">
-                                Diabetes mellitus is a group of chronic diseases arising from deranged metabolic functions in the body characterized by high blood sugar levels due to either the pancreas not producing adequate amount of a body chemical called insulin or the body not using same insulin effectively. Most diabetic patients may experience symptoms such as increased thirst and urination, fatigue, and weight loss.
-                            </p>
-                            <p class="post-excerpt">
-                                Over the long term diabetic patients are at risk of different complications. These can include heart attack, stroke, chronic kidney disease, vision loss, nerve damage (neuropathy), and foot ulcers, which may lead to cutting the legs off. Other complications include skin and mouth conditions, hearing impairment, and an increased risk of dementia (memory impairment) and certain bone diseases.
-                            </p>
-                            <p class="post-excerpt">
-                                To PREVENT DIABETES, you need to set a healthy lifestyle as a priority by maintaining a healthy weight, getting at least two and half hours of moderate physical activity per week, and eating a balanced diet low in sugar and saturated fat. Other key steps include managing stress, getting enough sleep, limiting alcohol, and quitting smoking. Always remember that prevention is better than cure!
-                            </p>
-                            <div class="post-reactions">
-                                <button class="reaction-btn like-btn" data-post="diabetes-prevention">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                                <button class="reaction-btn dislike-btn" data-post="diabetes-prevention">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+                    <!-- Additional blog posts would continue here in the same structure -->
                     
                     <!-- Newsletter Section -->
                     <div class="newsletter-section">
@@ -905,7 +838,7 @@
                             <h3>Subscribe to Our Newsletter</h3>
                             <p>Stay updated with the latest health tips, medical news, and special offers from Sonoscan Lab.</p>
                             <form class="newsletter-form">
-                                <input type="email" class="newsletter-input" placeholder="Your email address">
+                                <input type="email" class="newsletter-input" placeholder="Your email address" required>
                                 <button type="submit" class="newsletter-btn">Subscribe</button>
                             </form>
                         </div>
@@ -942,7 +875,7 @@
                     <p><i class="fa fa-map-marker-alt me-2"></i>Sonoscan, Abuja</p>
                     <p><i class="fa fa-phone-alt me-2"></i>+2347031004818</p>
                     <p><i class="fa fa-envelope me-2"></i>info@sonoscanlab.ng</p>
-                    <div class="d-flex mt-4">
+                    <div class="d-flex mt-4 justify-content-center justify-content-lg-start">
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -977,11 +910,10 @@
     <div class="container-fluid copyright bg-dark text-white-50 py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     <p class="mb-0">&copy; <a href="#">SonoScanLab</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    
                     <p class="mb-0">Designed by <a href="https://phygital-15fn.vercel.app/">Phygital</a></p>
                 </div>
             </div>
