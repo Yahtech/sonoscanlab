@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sonoscan - Lab</title>
+    <title>Sonoscan - Health Blog</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="Sonoscan Lab, medical blog, health tips, diabetes prevention, hypertension, cancer screening" name="keywords">
+    <meta content="Expert health advice and medical insights from Sonoscan Lab professionals" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -14,8 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Red+Rose:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -32,34 +31,42 @@
     <link href="css/style.css" rel="stylesheet">
     
     <style>
-        /* Reset and Base Styles */
+        /* Base Styles */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         
         body {
-            line-height: 1.6;
             font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
             color: #333;
+            background-color: #f8f9fa;
         }
         
-        /* Blog Page Custom Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Hero Section */
         .blog-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/medical-banner.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: white;
             padding: 80px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .blog-hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
-            text-align: center;
         }
         
         .blog-hero p {
@@ -67,125 +74,86 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
-            text-align: center;
+            opacity: 0.9;
         }
         
+        /* Blog Container */
         .blog-container {
-            padding: 0 15px 50px;
-            max-width: 1200px;
+            padding: 0 15px 60px;
+        }
+        
+        /* Remove sidebar completely */
+        .col-lg-4 {
+            display: none;
+        }
+        
+        .col-lg-8 {
+            width: 100%;
+            max-width: 900px;
             margin: 0 auto;
+            float: none;
         }
         
-        .blog-sidebar {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-            margin-bottom: 30px;
-        }
-        
-        .sidebar-widget {
-            margin-bottom: 30px;
-            text-align: left;
-        }
-        
-        .sidebar-widget:last-child {
-            margin-bottom: 0;
-        }
-        
-        .sidebar-widget h3 {
-            color: #1a76d1;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #1a76d1;
-            font-size: 1.3rem;
-            text-align: left;
-        }
-        
-        .tags-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .tag {
-            background-color: #e9ecef;
-            color: #495057;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .tag:hover {
-            background-color: #1a76d1;
-            color: white;
-        }
-        
+        /* Blog Posts */
         .blog-posts {
             padding-left: 0;
         }
         
-        @media (min-width: 992px) {
-            .blog-posts {
-                padding-left: 30px;
-            }
-        }
-        
         .blog-post {
-            margin-bottom: 30px;
+            background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
         }
         
         .blog-post:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         }
         
         .post-image {
             width: 100%;
-            height: 200px;
+            height: 280px;
             object-fit: cover;
             display: block;
         }
         
         .post-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .post-meta {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 12px;
-            font-size: 0.85rem;
-            color: #777;
             gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #6c757d;
             align-items: center;
         }
         
         .post-meta span {
             display: flex;
             align-items: center;
-            text-align: left;
+            background: #f8f9fa;
+            padding: 5px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
         }
         
         .post-meta i {
-            margin-right: 5px;
+            margin-right: 6px;
             color: #1a76d1;
+            font-size: 0.9rem;
         }
         
         .post-title {
             color: #1a76d1;
-            margin-bottom: 12px;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 20px;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
             font-weight: 700;
             line-height: 1.3;
             text-align: left;
@@ -194,7 +162,7 @@
         .post-title a {
             color: inherit;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
         
         .post-title a:hover {
@@ -203,98 +171,118 @@
         
         .post-excerpt {
             color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1rem;
             text-align: justify;
-            text-justify: inter-word;
+            hyphens: auto;
         }
         
         .post-excerpt p {
             margin-bottom: 15px;
+            text-align: justify;
         }
         
         .post-excerpt strong {
-            color: #333;
+            color: #2c3e50;
             font-weight: 600;
         }
         
-        .read-more {
-            color: #1a76d1;
-            text-decoration: none;
-            font-weight: 600;
+        .post-excerpt br {
+            margin-bottom: 10px;
+            display: block;
+            content: "";
+        }
+        
+        /* Health Tips and Warning Boxes */
+        .health-tip {
+            background: #e8f4fc;
+            border-left: 4px solid #1a76d1;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Reaction Buttons */
+        .post-reactions {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .reaction-btn {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
             display: inline-flex;
             align-items: center;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        
-        .read-more:hover {
-            color: #155a9e;
-            transform: translateX(5px);
-        }
-        
-        .read-more i {
-            margin-left: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .read-more:hover i {
-            transform: translateX(3px);
-        }
-        
-        .pagination {
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .page-link {
-            color: #1a76d1;
-            border: 1px solid #dee2e6;
-            padding: 8px 12px;
-            margin: 0 3px;
-            border-radius: 5px;
+            margin-right: 15px;
+            cursor: pointer;
+            color: #6c757d;
             transition: all 0.3s ease;
             font-size: 0.9rem;
-            text-align: center;
+            padding: 8px 16px;
+            border-radius: 5px;
+            min-width: 80px;
+            justify-content: center;
         }
         
-        .page-link:hover {
-            background-color: #1a76d1;
+        .reaction-btn:hover {
+            background: #1a76d1;
             color: white;
             border-color: #1a76d1;
         }
         
-        .page-item.active .page-link {
-            background-color: #1a76d1;
+        .reaction-btn.active {
+            background: #1a76d1;
+            color: white;
             border-color: #1a76d1;
+        }
+        
+        .reaction-btn i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .reaction-count {
+            font-weight: 600;
+            margin-left: 3px;
         }
         
         /* Newsletter Section */
         .newsletter-section {
-            background-color: #1a76d1;
+            background: linear-gradient(135deg, #1a76d1 0%, #155a9e 100%);
             color: white;
             padding: 50px 20px;
             margin: 60px 0;
             border-radius: 10px;
+            text-align: center;
         }
         
         .newsletter-content {
-            text-align: center;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
         
         .newsletter-content h3 {
             margin-bottom: 15px;
             font-size: clamp(1.3rem, 3vw, 1.8rem);
-            text-align: center;
+            font-weight: 600;
         }
         
         .newsletter-content p {
             margin-bottom: 25px;
-            font-size: 1rem;
-            text-align: center;
+            font-size: 1.05rem;
+            opacity: 0.9;
         }
         
         .newsletter-form {
@@ -309,126 +297,133 @@
             border: none;
             border-radius: 5px 0 0 5px;
             outline: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            min-width: 0;
         }
         
         .newsletter-btn {
-            background-color: #155a9e;
+            background-color: #ff6b6b;
             color: white;
             border: none;
-            padding: 0 20px;
+            padding: 0 25px;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
             font-weight: 600;
+            font-size: 1rem;
             white-space: nowrap;
-            min-width: 100px;
-            text-align: center;
         }
         
         .newsletter-btn:hover {
-            background-color: #11487c;
+            background-color: #ff5252;
         }
         
-        /* Like/Dislike Styles */
-        .post-reactions {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
+        /* Pagination */
+        .pagination {
+            justify-content: center;
+            margin-top: 40px;
         }
         
-        .reaction-btn {
-            background: none;
-            border: none;
-            display: flex;
-            align-items: center;
-            margin-right: 15px;
-            cursor: pointer;
-            color: #777;
+        .page-link {
+            color: #1a76d1;
+            border: 1px solid #dee2e6;
+            padding: 10px 15px;
+            margin: 0 3px;
+            border-radius: 5px;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
-            padding: 5px 10px;
+            font-size: 0.95rem;
+            min-width: 45px;
+            text-align: center;
         }
         
-        .reaction-btn:hover {
-            color: #1a76d1;
+        .page-link:hover {
+            background-color: #1a76d1;
+            color: white;
+            border-color: #1a76d1;
         }
         
-        .reaction-btn.active {
-            color: #1a76d1;
-        }
-        
-        .reaction-btn i {
-            margin-right: 5px;
-            font-size: 1rem;
-        }
-        
-        .reaction-count {
-            margin-left: 3px;
-        }
-        
-        /* Improved Text Alignment for Lists */
-        .post-excerpt br {
-            display: block;
-            margin: 10px 0;
-            content: "";
+        .page-item.active .page-link {
+            background-color: #1a76d1;
+            border-color: #1a76d1;
+            color: white;
         }
         
         /* Responsive Styles */
         @media (max-width: 1199px) {
-            .blog-posts {
-                padding-left: 20px;
+            .blog-container {
+                padding: 0 20px 50px;
+            }
+            
+            .post-content {
+                padding: 25px;
             }
         }
         
         @media (max-width: 991px) {
-            .blog-sidebar {
-                position: relative;
-                top: 0;
-                margin-bottom: 40px;
-            }
-            
-            .blog-posts {
-                padding-left: 0;
-            }
-            
             .blog-hero {
-                padding: 70px 15px;
-                margin-bottom: 25px;
+                padding: 70px 20px;
+                margin-bottom: 30px;
+            }
+            
+            .post-image {
+                height: 250px;
             }
             
             .post-content {
-                padding: 20px;
+                padding: 25px;
+            }
+            
+            .newsletter-section {
+                padding: 40px 20px;
+                margin: 50px 0;
             }
         }
         
         @media (max-width: 767px) {
             .blog-hero {
                 padding: 60px 15px;
+                margin-bottom: 25px;
             }
             
             .blog-container {
-                padding: 0 10px 40px;
+                padding: 0 15px 40px;
             }
             
-            .blog-sidebar {
-                padding: 20px 15px;
+            .post-image {
+                height: 220px;
             }
             
             .post-content {
-                padding: 18px;
+                padding: 20px;
+            }
+            
+            .post-meta {
+                gap: 10px;
+                font-size: 0.85rem;
+            }
+            
+            .post-meta span {
+                padding: 4px 10px;
+            }
+            
+            .post-excerpt {
+                font-size: 0.95rem;
+                text-align: left;
+            }
+            
+            .post-excerpt p {
+                text-align: left;
             }
             
             .newsletter-section {
-                padding: 40px 15px;
+                padding: 35px 15px;
                 margin: 40px 0;
             }
             
             .newsletter-form {
                 flex-direction: column;
                 width: 100%;
+                max-width: 400px;
             }
             
             .newsletter-input {
@@ -451,12 +446,10 @@
                 margin-bottom: 5px;
             }
             
-            .post-image {
-                height: 180px;
-            }
-            
-            .post-meta {
-                gap: 10px;
+            .page-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+                min-width: 40px;
             }
         }
         
@@ -465,34 +458,54 @@
                 padding: 50px 15px;
             }
             
+            .blog-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .blog-hero p {
+                font-size: 1rem;
+            }
+            
             .post-image {
-                height: 160px;
-            }
-            
-            .post-content {
-                padding: 15px;
-            }
-            
-            .blog-sidebar {
-                padding: 18px 12px;
-            }
-            
-            .sidebar-widget h3 {
-                font-size: 1.2rem;
-            }
-            
-            .tag {
-                padding: 5px 10px;
-                font-size: 0.8rem;
+                height: 200px;
             }
             
             .post-title {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
+            }
+            
+            .post-content {
+                padding: 18px;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .post-meta span {
+                width: 100%;
+                justify-content: flex-start;
             }
             
             .post-excerpt {
-                text-align: left;
                 font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            
+            .reaction-btn {
+                min-width: 70px;
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .newsletter-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .newsletter-content p {
+                font-size: 0.95rem;
             }
         }
         
@@ -502,76 +515,115 @@
             }
             
             .post-image {
-                height: 140px;
-            }
-            
-            .post-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            
-            .tags-list {
-                gap: 6px;
-            }
-            
-            .tag {
-                padding: 4px 10px;
-                font-size: 0.75rem;
-            }
-            
-            .newsletter-content h3 {
-                font-size: 1.3rem;
-            }
-            
-            .newsletter-content p {
-                font-size: 0.9rem;
-            }
-            
-            .post-reactions {
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .blog-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .blog-hero p {
-                font-size: 0.9rem;
+                height: 180px;
             }
             
             .post-title {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
             
             .post-excerpt {
                 font-size: 0.85rem;
             }
             
-            .post-image {
-                height: 120px;
+            .health-tip, .warning-box {
+                padding: 12px;
+                margin: 15px 0;
             }
             
-            .pagination .page-link {
-                padding: 6px 8px;
+            .reaction-btn {
+                min-width: 65px;
+                padding: 5px 10px;
                 font-size: 0.8rem;
+                margin-right: 10px;
+            }
+            
+            .reaction-btn i {
+                font-size: 0.9rem;
+                margin-right: 5px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .post-image {
+                height: 160px;
+            }
+            
+            .post-title {
+                font-size: 1.2rem;
+            }
+            
+            .post-excerpt {
+                font-size: 0.8rem;
+            }
+            
+            .newsletter-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .newsletter-content p {
+                font-size: 0.85rem;
+            }
+            
+            .page-link {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+                min-width: 35px;
+                margin: 0 2px;
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #1a76d1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #155a9e;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 767px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
             }
         }
         
         /* Improved Navigation for Mobile */
-        .navbar-nav {
-            text-align: center;
+        .navbar-toggler {
+            padding: 8px;
+            border: none;
         }
         
-        @media (min-width: 992px) {
-            .navbar-nav {
-                text-align: left;
-            }
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
         
-        /* Footer Responsive Improvements */
+        /* Improved Footer for Mobile */
         .footer .row {
             text-align: center;
         }
@@ -590,47 +642,34 @@
             }
         }
         
-        /* Ensure all images are responsive */
+        /* Ensure images are responsive */
         img {
             max-width: 100%;
             height: auto;
-            display: block;
         }
         
-        /* Improve button touch targets on mobile */
-        .btn, .page-link, .tag, .reaction-btn {
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        /* Text alignment fix for all elements */
+        h1, h2, h3, h4, h5, h6, p, span, div, a, li {
+            text-align: left;
         }
         
-        .tag {
-            min-height: auto;
-            padding: 6px 12px;
+        /* Center align specific elements */
+        .text-center {
+            text-align: center;
         }
         
-        .page-link {
-            min-height: 36px;
+        /* Justify text only on larger screens */
+        @media (min-width: 768px) {
+            .post-excerpt, .post-excerpt p {
+                text-align: justify;
+            }
         }
         
-        /* Container fluid for better mobile experience */
-        .container-fluid {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        
-        /* Improved text wrapping */
-        .post-excerpt {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
-        }
-        
-        /* Center align for mobile */
+        /* Improve readability on small screens */
         @media (max-width: 767px) {
-            .text-center-mobile {
-                text-align: center;
+            .post-excerpt, .post-excerpt p {
+                text-align: left;
+                hyphens: auto;
             }
         }
     </style>
@@ -638,25 +677,27 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 
     <!-- Topbar Start -->
-    <div class="container-fluid py-2 d-none d-lg-flex">
+    <div class="container-fluid py-2 d-none d-lg-flex bg-light">
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div>
-                    <small class="me-3"><i class="fa fa-clock me-2"></i>24hrs Services</small>
+                    <small><i class="fa fa-clock me-2"></i>24/7 Services Available</small>
                 </div>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
-
 
     <!-- Brand Start -->
     <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
@@ -669,7 +710,7 @@
                         <span>+2347031004818</span>
                     </div>
                 </div>
-                        <div class="d-flex">
+                <div class="d-flex">
                     <i class="bi bi-envelope fs-2"></i>
                     <div class="ms-3">
                         <h5 class="text-white mb-0">Mail Now</h5>
@@ -681,39 +722,32 @@
     </div>
     <!-- Brand End -->
 
-
     <!-- Navbar Start -->
-     <div class="container-fluid sticky-top">
+    <div class="container-fluid sticky-top bg-white shadow-sm">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <a href="index.html" class="navbar-brand">
                     <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid" style="max-height: 50px;">
                 </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse" aria-expanded="false" aria-controls="navbarCollapse" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" 
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Our Services</a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="service.html" class="dropdown-item">Diagnostics Services</a>
-                                <a href="#" class="dropdown-item">Dr. Consultation</a>
-                                <a href="health.html" class="dropdown-item">Medical Check up Packages</a>
-                            </div>
-                        </div>
-                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <div class="ms-auto d-none d-lg-flex">
-                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="service.html">Diagnostics</a></li>
+                                <li><a class="dropdown-item" href="consultation.html">Consultation</a></li>
+                                <li><a class="dropdown-item" href="health.html">Check-up Packages</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </nav>
         </div>
@@ -723,50 +757,41 @@
     <!-- Blog Hero Section -->
     <div class="blog-hero">
         <div class="container">
-            <h1>Health Blog</h1>
-            <p>Stay informed with the latest medical insights, health tips, and news from our team of healthcare professionals</p>
+            <h1>Sonoscan Health Blog</h1>
+            <p>Expert medical advice, health tips, and wellness insights from our healthcare professionals</p>
         </div>
     </div>
 
     <!-- Blog Content Section -->
     <div class="container blog-container">
         <div class="row">
-            <!-- Sidebar -->
-            <div class="col-lg-4">
-                <div class="blog-sidebar">
-                    <!-- Tags Widget -->
-                   
-                </div>
-            </div> 
-            
-            <!-- Blog Posts -->
-            <div class="col-lg-8">
+            <!-- Blog Posts - Full Width -->
+            <div class="col-lg-12">
                 <div class="blog-posts">
+                    
                     <!-- Blog Post 1 - Health Check-ups -->
                     <article class="blog-post">
-                        <h2 class="post-title">WHY DO YOU NEED ROUTINE MEDICAL CHECK UP?</h2>
-                        <img src="img/medical packs 3.jpg" alt="Health Check-up" class="post-image">
+                        <h2 class="post-title">Why Routine Medical Check-ups Are Essential</h2>
+                        <img src="img/medical packs 3.jpg" alt="Medical Check-up" class="post-image">
                         <div class="post-content">
                             <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-user"></i> by Sonoscan Team</span>
                                 <span><i class="far fa-calendar"></i> 2025</span>
                             </div>
                             <div class="post-excerpt">
-                                <p>Regular health checkups are crucial for longevity in the world of today. This is because these checks enable early detection of diseases, which increases the chances of successful treatment and recovery. No age is excluded when it comes to medical checks.</p>
+                                <p>Regular health checkups are crucial for longevity in today's world. These checks enable early detection of diseases, which increases the chances of successful treatment and recovery. No age is excluded when it comes to medical checks.</p>
                                 <p>They also facilitate preventive care by providing a platform for doctors to offer advice on healthy habits and lifestyle choices which helps in preventing the occurrence of diseases in the first place.</p>
                                 <p>Secondly, routine medical check ups also facilitate early detection of diseases. This is important because many diseases show no outward signs or symptoms at the early stages. When diseases are detected early it offers opportunities to treat them successfully and prolong life.</p>
                                 <p>Thirdly, for those with existing conditions and diseases such as diabetes, hypertension, cancer, medical check ups are essential in monitoring the progression of the diseases while adjusting medications and treatment plans to avoid complications and early death.</p>
                                 <p>Finally, check ups reduce your spending on healthcare issues since it is cheaper to prevent diseases than treating and managing chronic and complicated disease states. In addition check up provides you the opportunity for building trusting relationship between you and your Healthcare providers who can create for you a personalized health care plan based on your unique lifestyle and risk factors.</p>
-                                <p>Need a medical check up? Visit any of our offices today.</p>
+                                <p><strong>Need a medical check up? Visit any of our offices today.</strong></p>
                             </div>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="checkup">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
+                                    <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
                                 </button>
                                 <button class="reaction-btn dislike-btn" data-post="checkup">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
+                                    <i class="far fa-thumbs-down"></i> <span class="reaction-count">0</span>
                                 </button>
                             </div>
                         </div>
@@ -774,30 +799,28 @@
                     
                     <!-- Blog Post 2 - Hypertension -->
                     <article class="blog-post">
-                        <h2 class="post-title">WHY IS HYPERTENSION CALLED A "SILENT KILLER"?</h2>
-                        <img src="img/checkup.jpg" alt="Hypertension" class="post-image">
+                        <h2 class="post-title">Hypertension: The Silent Killer</h2>
+                        <img src="img/checkup.jpg" alt="Hypertension Check" class="post-image">
                         <div class="post-content">
                             <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-user"></i> by Sonoscan Team</span>
                                 <span><i class="far fa-calendar"></i> 2025</span>
                             </div>
                             <div class="post-excerpt">
                                 <p>Among medical professionals, hypertension is widely called a "silent killer". This is because most affected people do not manifest any symptoms until complications develop. In other words, it is a silent danger because someone can have the condition for many years without knowing it. The complications of hypertension can be sudden or gradual in onset:</p>
-                                <p>SUDDENLY, someone has a stroke (mostly manifested as paralysis) and then he is diagnosed with hypertension.</p>
-                                <p>SUDDENLY, someone has a heart attack, and it becomes linked to hypertension.</p>
-                                <p>SUDDENLY, someone develops kidney failure. And again, hypertension is found to be the cause.</p>
-                                <p>GRADUALLY, someone's eye sight fails, their ability to think clearly and remember events drops noticeably. And behind it all could be untreated blood high pressure.</p>
+                                <p><strong>SUDDENLY</strong>, someone has a stroke (mostly manifested as paralysis) and then he is diagnosed with hypertension.</p>
+                                <p><strong>SUDDENLY</strong>, someone has a heart attack, and it becomes linked to hypertension.</p>
+                                <p><strong>SUDDENLY</strong>, someone develops kidney failure. And again, hypertension is found to be the cause.</p>
+                                <p><strong>GRADUALLY</strong>, someone's eye sight fails, their ability to think clearly and remember events drops noticeably. And behind it all could be untreated blood high pressure.</p>
                                 <p>Other complications of hypertension include heart failure (either from a weakened heart muscle or by a sudden heart attack) and aneurysms (bulging and possible rupture of arteries).</p>
-                                <p>Checking your blood pressure regularly could do you a whole world of good as they say.</p>
+                                <p><strong>Checking your blood pressure regularly could do you a whole world of good as they say.</strong></p>
                             </div>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="hypertension">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
+                                    <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
                                 </button>
                                 <button class="reaction-btn dislike-btn" data-post="hypertension">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
+                                    <i class="far fa-thumbs-down"></i> <span class="reaction-count">0</span>
                                 </button>
                             </div>
                         </div>
@@ -805,11 +828,11 @@
                     
                     <!-- Blog Post 3 - Prostate Health -->
                     <article class="blog-post">
-                        <h2 class="post-title">KEEPING UP WITH YOUR PROSTATE</h2>
+                        <h2 class="post-title">Keeping Up With Your Prostate Health</h2>
                         <img src="img/prostrate.jpg" alt="Prostate Health" class="post-image">
                         <div class="post-content">
                             <div class="post-meta">
-                                <span><i class="far fa-user"></i> by Sonoscan</span>
+                                <span><i class="far fa-user"></i> by Sonoscan Team</span>
                                 <span><i class="far fa-calendar"></i> 2025</span>
                             </div>
                             <div class="post-excerpt">
@@ -819,18 +842,67 @@
                             </div>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="prostate-health">
-                                    <i class="far fa-thumbs-up"></i>
-                                    <span class="reaction-count">0</span>
+                                    <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
                                 </button>
                                 <button class="reaction-btn dislike-btn" data-post="prostate-health">
-                                    <i class="far fa-thumbs-down"></i>
-                                    <span class="reaction-count">0</span>
+                                    <i class="far fa-thumbs-down"></i> <span class="reaction-count">0</span>
                                 </button>
                             </div>
                         </div>
                     </article>
                     
-                    <!-- Additional blog posts would continue here in the same structure -->
+                    <!-- Blog Post 4 - Fatty Liver -->
+                    <article class="blog-post">
+                        <h2 class="post-title">Fatty Liver Disease: What You Need to Know</h2>
+                        <img src="img/liver.jpg" alt="Liver Health" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan Team</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>This post highlights the importance of checking up on your liver regularly. The liver is located at upper right segment of the abdomen. It has vital roles in metabolism, detoxification, and digestion by filtering blood, producing bile, metabolizing nutrients, and storing vitamins and minerals. Functionally, the liver processes nutrients absorbed from the intestines and detoxifies harmful substances like drugs and alcohol, playing a crucial role in maintaining overall health.</p>
+                                <p>Fatty liver disease is a condition characterized by the buildup of excess fat in the liver, which can be caused by heavy alcohol use or non-alcoholic factors like obesity, diabetes, and high-fat diets. It can range from a mild condition with no symptoms to a more severe form called metabolic dysfunction-associated steatohepatitis (MASH), which involves inflammation and liver damage and can lead to cirrhosis or liver cancer.</p>
+                                <p>Often, there are no or few symptoms in the early stages. When symptoms occur, they may include fatigue or pain in the upper right side of the abdomen. In advanced stages like cirrhosis, symptoms can include jaundice (yellowing of the skin and eyes), confusion, and swelling in the legs or abdomen.</p>
+                                <p>Risk factors for fatty liver disease include being overweight or obesity, high-fat and high-sugar diets, high alcohol intake, diabetes, high cholesterol and triglycerides, high blood pressure.</p>
+                                <p>Fatty liver disease progresses through four stages: fatty liver (steatosis), where fat builds up with no damage; metabolic dysfunction-associated steatohepatitis (MASH), which involves fat accumulation and inflammation; fibrosis, where inflammation causes scarring; and cirrhosis, the final stage of severe, irreversible liver scarring.</p>
+                                <p>Treatment often involves lifestyle changes like weight loss, exercise, and dietary improvements. Early stages can be reversed with lifestyle changes, but advanced stages lead to serious complications like liver failure.</p>
+                            </div>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="fatty-liver">
+                                    <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="fatty-liver">
+                                    <i class="far fa-thumbs-down"></i> <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post 5 - Diabetes Prevention -->
+                    <article class="blog-post">
+                        <h2 class="post-title">How to Prevent Diabetes</h2>
+                        <img src="img/diabetics.jpg" alt="Diabetes Prevention" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-user"></i> by Sonoscan Team</span>
+                                <span><i class="far fa-calendar"></i> 2025</span>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>Diabetes mellitus is a group of chronic diseases arising from deranged metabolic functions in the body characterized by high blood sugar levels due to either the pancreas not producing adequate amount of a body chemical called insulin or the body not using same insulin effectively. Most diabetic patients may experience symptoms such as increased thirst and urination, fatigue, and weight loss.</p>
+                                <p>Over the long term diabetic patients are at risk of different complications. These can include heart attack, stroke, chronic kidney disease, vision loss, nerve damage (neuropathy), and foot ulcers, which may lead to cutting the legs off. Other complications include skin and mouth conditions, hearing impairment, and an increased risk of dementia (memory impairment) and certain bone diseases.</p>
+                                <p>To <strong>PREVENT DIABETES</strong>, you need to set a healthy lifestyle as a priority by maintaining a healthy weight, getting at least two and half hours of moderate physical activity per week, and eating a balanced diet low in sugar and saturated fat. Other key steps include managing stress, getting enough sleep, limiting alcohol, and quitting smoking. Always remember that prevention is better than cure!</p>
+                            </div>
+                            <div class="post-reactions">
+                                <button class="reaction-btn like-btn" data-post="diabetes-prevention">
+                                    <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn dislike-btn" data-post="diabetes-prevention">
+                                    <i class="far fa-thumbs-down"></i> <span class="reaction-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
                     
                     <!-- Newsletter Section -->
                     <div class="newsletter-section">
@@ -848,7 +920,7 @@
                     <nav aria-label="Blog pagination">
                         <ul class="pagination">
                             <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
                             </li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -864,20 +936,20 @@
     </div>
 
     <!-- Footer Start -->
-    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid footer bg-dark text-white-50 py-5">
         <div class="container">
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.html" class="navbar-brand mb-4">
                         <h1 class="h1 text-primary mb-0">Sonoscan<span class="text-white">Lab</span></h1>
                     </a>
-                    <p class="fs-5 mb-4">Your trusted partner in health and wellness, providing comprehensive medical services and compassionate care.</p>
-                    <p><i class="fa fa-map-marker-alt me-2"></i>Sonoscan, Abuja</p>
-                    <p><i class="fa fa-phone-alt me-2"></i>+2347031004818</p>
-                    <p><i class="fa fa-envelope me-2"></i>info@sonoscanlab.ng</p>
-                    <div class="d-flex mt-4 justify-content-center justify-content-lg-start">
-                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <p class="mb-4">Your trusted partner in health and wellness, providing comprehensive medical services and compassionate care.</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>Sonoscan, Abuja</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>+2347031004818</p>
+                    <p class="mb-4"><i class="fa fa-envelope me-2"></i>info@sonoscanlab.ng</p>
+                    <div class="d-flex">
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -886,17 +958,17 @@
                     <div class="row g-5">
                         <div class="col-sm-6">
                             <h4 class="text-light mb-4">Quick Links</h4>
-                            <a class="btn btn-link" href="about.html">About Us</a>
-                            <a class="btn btn-link" href="contact.html">Contact Us</a>
-                            <a class="btn btn-link" href="services.html">Our Services</a>
-                            <a class="btn btn-link" href="blog.html">Blog</a>
+                            <a class="btn btn-link d-block mb-2" href="about.html">About Us</a>
+                            <a class="btn btn-link d-block mb-2" href="contact.html">Contact Us</a>
+                            <a class="btn btn-link d-block mb-2" href="services.html">Our Services</a>
+                            <a class="btn btn-link d-block" href="blog.html">Blog</a>
                         </div>
                         <div class="col-sm-6">
                             <h4 class="text-light mb-4">Our Services</h4>
-                            <a class="btn btn-link" href="services.html#diagnostics">Diagnostics</a>
-                            <a class="btn btn-link" href="services.html#consultation">Consultation</a>
-                            <a class="btn btn-link" href="services.html#checkup">Health Check-ups</a>
-                            <a class="btn btn-link" href="services.html#ultrasound">Ultrasound</a>
+                            <a class="btn btn-link d-block mb-2" href="services.html#diagnostics">Diagnostics</a>
+                            <a class="btn btn-link d-block mb-2" href="services.html#consultation">Consultation</a>
+                            <a class="btn btn-link d-block mb-2" href="services.html#checkup">Health Check-ups</a>
+                            <a class="btn btn-link d-block" href="services.html#ultrasound">Ultrasound</a>
                         </div>
                     </div>
                 </div>
@@ -904,7 +976,6 @@
         </div>
     </div>
     <!-- Footer End -->
-
 
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark text-white-50 py-4">
@@ -920,7 +991,6 @@
         </div>
     </div>
     <!-- Copyright End -->
-
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -1036,10 +1106,32 @@
                 });
             });
             
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
             // Initialize reactions on page load
             loadReactions();
+            
+            // Remove spinner after page loads
+            setTimeout(function() {
+                document.getElementById('spinner').classList.remove('show');
+            }, 500);
         });
     </script>
 </body>
-
 </html>
