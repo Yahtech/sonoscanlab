@@ -54,6 +54,7 @@
             height: fit-content;
             position: sticky;
             top: 100px;
+            z-index: 100;
         }
         
         .services-sidebar h3 {
@@ -61,6 +62,7 @@
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 2px solid #1a76d1;
+            text-align: left;
         }
         
         .service-list {
@@ -81,6 +83,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 500;
+            text-align: left;
         }
         
         .service-list a:hover, .service-list a.active {
@@ -92,41 +95,64 @@
             padding-left: 40px;
         }
         
+        .service-item {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
         .service-image {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            object-fit: cover;
+            display: block;
         }
         
         .service-title {
             color: #1a76d1;
             margin-bottom: 20px;
             font-weight: 700;
+            font-size: 2rem;
+            text-align: left;
+            width: 100%;
         }
         
         .service-description {
             line-height: 1.8;
             color: #555;
             margin-bottom: 25px;
+            font-size: 1.1rem;
+            text-align: left;
+            width: 100%;
         }
         
         .service-features {
             margin-top: 30px;
+            width: 100%;
         }
         
         .service-features h4 {
             color: #1a76d1;
             margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: left;
+            width: 100%;
         }
         
         .service-features ul {
             padding-left: 20px;
+            margin: 0;
+            width: 100%;
         }
         
         .service-features li {
             margin-bottom: 10px;
             line-height: 1.6;
+            font-size: 1.05rem;
+            text-align: left;
         }
         
         .service-cta {
@@ -138,11 +164,171 @@
             border-radius: 5px;
             font-weight: 600;
             transition: all 0.3s ease;
+            display: inline-block;
         }
         
         .service-cta:hover {
             background-color: #155a9e;
             transform: translateY(-2px);
+        }
+        
+        /* Mobile tab navigation */
+        .mobile-tabs-container {
+            display: none;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px;
+            width: 100%;
+        }
+        
+        .mobile-tabs-description {
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eaeaea;
+            width: 100%;
+        }
+        
+        .mobile-tabs-description h3 {
+            color: #1a76d1;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .mobile-tabs-description p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0;
+            text-align: left;
+        }
+        
+        .mobile-tabs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            width: 100%;
+        }
+        
+        .mobile-tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 5px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            height: 40px;
+            font-size: 0.85rem;
+            width: 100%;
+        }
+        
+        .mobile-tab:hover {
+            background: #e9ecef;
+        }
+        
+        .mobile-tab.active {
+            background: #1a76d1;
+            color: white;
+            border-color: #155a9e;
+        }
+        
+        .mobile-tab.active:hover {
+            background: #155a9e;
+        }
+        
+        /* Scroll indicator for mobile */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1a76d1;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-indicator.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-indicator:hover {
+            background: #155a9e;
+            transform: scale(1.1);
+        }
+        
+        /* Service item animation */
+        .service-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            scroll-margin-top: 120px;
+            display: none;
+        }
+        
+        .service-item.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+        
+        /* Highlight the active section on mobile */
+        .service-item:target {
+            animation: highlight 2s ease;
+        }
+        
+        @keyframes highlight {
+            0% { background-color: transparent; }
+            20% { background-color: rgba(26, 118, 209, 0.1); }
+            100% { background-color: transparent; }
+        }
+        
+        /* Ensure all content containers are properly aligned */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-lg-4, .col-lg-8 {
+            padding: 0 15px;
+            position: relative;
+            width: 100%;
+        }
+        
+        /* Ensure consistent text alignment */
+        .text-left {
+            text-align: left;
+        }
+        
+        .text-center {
+            text-align: center;
         }
         
         /* Responsive Styles */
@@ -156,6 +342,31 @@
             .service-content {
                 padding-left: 0;
             }
+            
+            .mobile-tabs-container {
+                display: block;
+            }
+            
+            .services-sidebar {
+                display: none;
+            }
+            
+            .service-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-image {
+                height: 250px;
+            }
+            
+            .col-lg-8 {
+                width: 100%;
+            }
+            
+            .service-item {
+                width: 100%;
+                margin: 0 auto;
+            }
         }
         
         @media (max-width: 767px) {
@@ -164,12 +375,125 @@
             }
             
             .services-container {
-                padding: 40px 0;
+                padding: 20px 0 80px;
+                margin-top: 20px;
             }
+            
+            .service-title {
+                font-size: 1.6rem;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .service-image {
+                height: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .service-description, .service-features li {
+                font-size: 1rem;
+            }
+            
+            .scroll-indicator {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .service-features ul {
+                padding-left: 20px;
+                width: 100%;
+            }
+            
+            /* Adjust for very small screens */
+            @media (max-width: 380px) {
+                .mobile-tabs-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .mobile-tab {
+                    font-size: 0.8rem;
+                    padding: 6px 4px;
+                    height: 38px;
+                }
+                
+                .mobile-tabs-description h3 {
+                    font-size: 1.1rem;
+                }
+                
+                .mobile-tabs-description p {
+                    font-size: 0.85rem;
+                }
+                
+                .service-title {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .mobile-tab {
+                font-size: 0.9rem;
+                padding: 10px 5px;
+                height: 45px;
+            }
+            
+            .service-content {
+                width: 100%;
+            }
+        }
+        
+        /* For tablets in landscape */
+        @media (min-width: 992px) {
+            .mobile-tabs-container {
+                display: none !important;
+            }
+            
+            .col-lg-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            
+            .col-lg-8 {
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+            
+            .service-content {
+                width: 100%;
+            }
+        }
+        
+        /* Fix alignment for all screen sizes */
+        @media (max-width: 575px) {
+            .service-title,
+            .service-description,
+            .service-features h4,
+            .service-features ul,
+            .service-features li {
+                text-align: left;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .service-image {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        
+        /* Ensure all content is properly contained */
+        .service-content > div {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
         }
     </style>
 </head>
-<a href="https://wa.me/2348039609801?text=Hello%20Sonoscan%20Lab!%20I%20would%20like%20to%20make%20an%20inquiry." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a> 
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
@@ -178,20 +502,17 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Topbar Start -->
     <div class="container-fluid py-2 d-none d-lg-flex">
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div>
-                    
                     <small class="me-3"><i class="fa fa-clock me-2"></i>24hrs Services</small>
                 </div>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
-
 
     <!-- Brand Start -->
     <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
@@ -216,14 +537,12 @@
     </div>
     <!-- Brand End -->
 
-
     <!-- Navbar Start -->
-     <div class="container-fluid sticky-top">
+    <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand">
-                    <!-- Responsive logo image -->
-                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid">
+                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid" style="max-height: 60px;">
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -233,15 +552,14 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
                         <div class="dropdown-menu bg-light m-0">
                             <a href="service.html" class="dropdown-item">Diagnostics Services</a>
-                            <a href="#" class="dropdown-item">Dr. Consultation</a>
+                            <!-- <a href="#" class="dropdown-item">Dr. Consultation</a> -->
                             <a href="health.html" class="dropdown-item">Medical Check up Packages</a>
-
                         </div>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <a href="#" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ms-auto d-none d-lg-flex">
                         <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -255,6 +573,24 @@
     </div>
     <!-- Navbar End -->
 
+    <!-- Mobile Tabs Navigation -->
+    <div class="mobile-tabs-container">
+        <div class="mobile-tabs-description">
+            <h3>Our Medical Services</h3>
+            <p>Tap any service to view details. We provide comprehensive healthcare with cutting-edge technology.</p>
+        </div>
+        
+        <div class="mobile-tabs-grid">
+            <div class="mobile-tab active" data-service="diagnostics">Diagnostics</div>
+            <div class="mobile-tab" data-service="consultation">Consultation</div>
+            <div class="mobile-tab" data-service="checkup">Check-up</div>
+            <div class="mobile-tab" data-service="ultrasound">Ultrasound</div>
+            <div class="mobile-tab" data-service="laboratory">Laboratory</div>
+            <div class="mobile-tab" data-service="xray">Xray</div>
+            <div class="mobile-tab" data-service="cardiology">Cardiology</div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="services-hero">
         <div class="container">
@@ -266,17 +602,18 @@
     <!-- Services Section Start -->
     <div class="container services-container">
         <div class="row">
-            <!-- Sidebar -->
-            <div class="col-lg-4">
+            <!-- Sidebar (Hidden on Mobile) -->
+            <div class="col-lg-4 d-none d-lg-block">
                 <div class="services-sidebar">
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li><a href="#diagnostics" class="active" data-service="diagnostics">Diagnostics Services</a></li>
                         <li><a href="#consultation" data-service="consultation">Dr. Consultation</a></li>
-                        <li><a href="health.html" data-service="checkup">Medical Check-up Packages</a></li>
+                        <li><a href="#checkup" data-service="checkup">Medical Check-up Packages</a></li>
                         <li><a href="#ultrasound" data-service="ultrasound">Ultrasound Scanning</a></li>
                         <li><a href="#laboratory" data-service="laboratory">Laboratory Tests</a></li>
-                        <li><a href="#cardiology" data-service="cardiology">Cardiology Services</a></li>
+                        <li><a href="#xray" data-service="xray">Xray Services</a></li>
+                        <li><a href="#cardiology" data-service="cardiology">Cardiovascular Services</a></li>
                     </ul>
                 </div>
             </div>
@@ -300,15 +637,13 @@
                                 <li>Pathology Services</li>
                                 <li>Electrocardiogram (ECG)</li>
                                 <li>Pulmonary Function Tests</li>
-                            
                             </ul>
                         </div>
-                        <!-- <button class="service-cta">Schedule an Appointment</button> -->
                     </div>
                     
                     <!-- Dr. Consultation -->
-                    <div id="consultation" class="service-item" style="display: none;">
-                         <h2 class="service-title">Dr. Consultation</h2>
+                    <div id="consultation" class="service-item">
+                        <h2 class="service-title">Dr. Consultation</h2>
                         <img src="img/consult.jpg" alt="Dr. Consultation" class="service-image">
                        
                         <p class="service-description">
@@ -324,11 +659,10 @@
                                 <li>Health Risk Assessments</li>
                             </ul>
                         </div>
-                        <!-- <button class="service-cta">Book a Consultation</button> -->
                     </div>
                     
                     <!-- Medical Check-up Packages -->
-                    <div id="checkup" class="service-item" style="display: none;">
+                    <div id="checkup" class="service-item">
                         <h2 class="service-title">Medical Check-up Packages</h2>
                         <img src="img/medical packs 1.jpg" alt="Medical Check-up Packages" class="service-image">
                         
@@ -346,13 +680,11 @@
                                 <li>Comprehensive Annual Check-up</li>
                             </ul>
                         </div>
-                        <!-- <button class="service-cta">View Packages</button> -->
                     </div>
                     
-                    <!-- Additional services would follow the same pattern -->
                     <!-- Ultrasound Scanning -->
-                    <div id="ultrasound" class="service-item" style="display: none;">
-                         <h2 class="service-title">Ultrasound Scanning</h2>
+                    <div id="ultrasound" class="service-item">
+                        <h2 class="service-title">Ultrasound Scanning</h2>
                         <img src="img/ultrasound.jpg" alt="Ultrasound Scanning" class="service-image">
                        
                         <p class="service-description">
@@ -367,18 +699,23 @@
                                 <li>Doppler Studies</li>
                                 <li>Musculoskeletal Ultrasound</li>
                                 <li>Thyroid and Neck Ultrasound</li>
+                                <li>Prostate scan (TRUSS)</li>
+                                <li>Heart scan (Echocardiography)</li>
+                                <li>Vascular ultrasound</li>
+                                <li>Follicular Tracking (TVS)</li>
+                                <li>Eye scan (Occular B scan)</li>
+                                <li>Breast scan</li>
                             </ul>
                         </div>
-                        <!-- <button class="service-cta">Schedule Ultrasound</button> -->
                     </div>
                     
                     <!-- Laboratory Tests -->
-                    <div id="laboratory" class="service-item" style="display: none;">
+                    <div id="laboratory" class="service-item">
                         <h2 class="service-title">Laboratory Tests</h2>
-                        <img src="img/lab.jpg">
+                        <img src="img/lab.jpg" alt="Laboratory Tests" class="service-image">
                         
                         <p class="service-description">
-                            Our state-of-the-art laboratory is equipped with automated analyzers and staffed by experienced technicians to provide accurate and timely test results. We follow strict quality control measures to ensure reliability.
+                            Our Lab staffed by experienced scientists and techniciansto who provide accurate and timely test results. We follow strict quality control measures to ensure reliability. The lab scientists are the lab leaders not technicians.
                         </p>
                         <div class="service-features">
                             <h4>Laboratory Services:</h4>
@@ -388,38 +725,62 @@
                                 <li>Hormone Testing</li>
                                 <li>Infectious Disease Testing</li>
                                 <li>Cancer Markers</li>
-                                
                             </ul>
                         </div>
-                        <!-- <button class="service-cta">Request Lab Test</button> -->
+                    </div>
+
+                     <!-- Xray Services -->
+                    <div id="xray" class="service-item">
+                        <h2 class="service-title">Xray Services</h2>
+                        <img src="img/xray 1.jpg" alt="Xray Services" class="service-image">
+                        
+                        <p class="service-description">
+                            Our digital Xray suite offers dependable and comfortable Xray services, providing actionable and radiologist-vetted reports. Some of our services are listed below. 
+                        </p>
+                        <div class="service-features">
+                            <h4>Xray Services:</h4>
+                            <ul>
+                                <li>Comprehensive bones and joints Xray</li>
+                                <li>HSG (hysterosalpingography)</li>
+                                <li>Barium swallow</li>
+                                <li>Barium meal</li>
+                                <li>Barium enema</li>
+                                <li>IVU (intravenous urography)</li>
+                            </ul>
+                        </div>
                     </div>
                     
                     <!-- Cardiology Services -->
-                    <div id="cardiology" class="service-item" style="display: none;">
-                        <h2 class="service-title">Cardiology Services</h2>
+                    <div id="cardiology" class="service-item">
+                        <h2 class="service-title">Cardiovascular Services</h2>
                         <img src="img/ecg.jpg" alt="Cardiology Services" class="service-image">
                         
                         <p class="service-description">
-                            Our cardiology department offers comprehensive heart care with advanced diagnostic tools and treatment options. Our team of cardiologists provides personalized care for various heart conditions.
+                            Our cardiovascular services are tailored towards providing diagnostic studies for heart conditions such as hypertensive heart disease, irregular heart beats, valvular heart problems, heart attacks and blocked blood vessels in the upper and lower limbs (peripheral vascular diseases). These cardiovascular services are listed below.
                         </p>
                         <div class="service-features">
-                            <h4>Cardiology Services:</h4>
+                            <h4>Cardiovascular Services:</h4>
                             <ul>
                                 <li>Electrocardiogram (ECG)</li>
                                 <li>Echocardiography</li>
+                                <li>Vascular Duplex ultrasound scan</li>
                                 <li>Stress Testing (Availability Awaited)</li>
                                 <li>Holter Monitoring (Availability Awaited)</li>
                                 <li>Cardiac Rehabilitation</li>
                                 <li>Preventive Cardiology</li>
                             </ul>
                         </div>
-                        <!-- <button class="service-cta">Cardiology Consultation</button> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Services Section End -->
+
+    <!-- Scroll to top indicator -->
+    <div class="scroll-indicator" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <!-- Footer Start -->
     <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
@@ -463,7 +824,6 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark text-white-50 py-4">
         <div class="container">
@@ -472,18 +832,12 @@
                     <p class="mb-0">&copy; <a href="#">SonoScanLab</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     <p class="mb-0">Designed by <a href="https://phygital-15fn.vercel.app/">Phygital</a></p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Copyright End -->
-
-
-    <!-- Back to Top
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a> -->
-
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -500,39 +854,136 @@
     <!-- Services Page JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Service navigation functionality
+            // Elements
             const serviceLinks = document.querySelectorAll('.service-list a');
+            const mobileTabs = document.querySelectorAll('.mobile-tab');
             const serviceItems = document.querySelectorAll('.service-item');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
             
+            // Function to show a specific service
+            function showService(serviceId, scrollTo = true) {
+                // Remove active class from all links and tabs
+                serviceLinks.forEach(link => link.classList.remove('active'));
+                mobileTabs.forEach(tab => tab.classList.remove('active'));
+                
+                // Hide all service items
+                serviceItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.style.display = 'none';
+                });
+                
+                // Show the target service item
+                const targetItem = document.getElementById(serviceId);
+                if (targetItem) {
+                    targetItem.style.display = 'block';
+                    // Trigger reflow to ensure display property is applied
+                    targetItem.offsetHeight;
+                    targetItem.classList.add('active');
+                    
+                    // Update active tab/link
+                    const desktopLink = document.querySelector(`[data-service="${serviceId}"]`);
+                    if (desktopLink) desktopLink.classList.add('active');
+                    
+                    document.querySelector(`.mobile-tab[data-service="${serviceId}"]`).classList.add('active');
+                    
+                    // Scroll to the service on mobile
+                    if (scrollTo && window.innerWidth < 992) {
+                        setTimeout(() => {
+                            // Calculate position to scroll to (account for sticky header)
+                            const headerOffset = document.querySelector('.mobile-tabs-container').offsetHeight + 10;
+                            const elementPosition = targetItem.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update URL hash without jumping
+                            history.pushState(null, null, `#${serviceId}`);
+                        }, 100);
+                    }
+                }
+            }
+            
+            // Desktop sidebar navigation
             serviceLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Remove active class from all links
-                    serviceLinks.forEach(l => l.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Get the target service
                     const targetService = this.getAttribute('data-service');
-                    
-                    // Hide all service items
+                    showService(targetService, false); // Don't auto-scroll on desktop
+                });
+            });
+            
+            // Mobile tabs navigation
+            mobileTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetService = this.getAttribute('data-service');
+                    showService(targetService, true); // Auto-scroll on mobile
+                });
+            });
+            
+            // Show scroll to top button when scrolled down
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+                
+                // Update active tab based on scroll position on mobile
+                if (window.innerWidth < 992) {
+                    let currentSection = '';
                     serviceItems.forEach(item => {
-                        item.style.display = 'none';
+                        const rect = item.getBoundingClientRect();
+                        const headerOffset = document.querySelector('.mobile-tabs-container').offsetHeight;
+                        
+                        // Check if element is in viewport (with offset for sticky header)
+                        if (rect.top <= headerOffset + 50 && rect.bottom >= headerOffset + 50) {
+                            currentSection = item.id;
+                        }
                     });
                     
-                    // Show the target service item
-                    document.getElementById(targetService).style.display = 'block';
+                    if (currentSection) {
+                        // Update active mobile tab
+                        mobileTabs.forEach(tab => tab.classList.remove('active'));
+                        const activeTab = document.querySelector(`.mobile-tab[data-service="${currentSection}"]`);
+                        if (activeTab) activeTab.classList.add('active');
+                    }
+                }
+            });
+            
+            // Scroll to top functionality
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
             
             // Initialize the first service as active
             if (serviceLinks.length > 0) {
-                serviceLinks[0].click();
+                // Check if there's a hash in the URL
+                const hash = window.location.hash.substring(1);
+                const validServices = ['diagnostics', 'consultation', 'checkup', 'ultrasound', 'laboratory', 'xray', 'cardiology'];
+                
+                if (hash && validServices.includes(hash)) {
+                    showService(hash, false);
+                } else {
+                    showService('diagnostics', false);
+                }
             }
+            
+            // Handle hash changes (back/forward navigation)
+            window.addEventListener('hashchange', function() {
+                const hash = window.location.hash.substring(1);
+                const validServices = ['diagnostics', 'consultation', 'checkup', 'ultrasound', 'laboratory', 'xray', 'cardiology'];
+                
+                if (hash && validServices.includes(hash)) {
+                    showService(hash, window.innerWidth < 992);
+                }
+            });
         });
     </script>
 </body>
-
 </html>

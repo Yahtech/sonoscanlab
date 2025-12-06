@@ -673,31 +673,36 @@
     <!-- Brand End -->
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-white shadow-sm">
+   <div class="container-fluid sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand">
-                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid" style="max-height: 50px;">
+                    <!-- Responsive logo image -->
+                    <img src="img/sonoscan logo.jpg" alt="Sonoscan Lab" class="img-fluid">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" 
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="service.html">Diagnostics</a></li>
-                                <li><a class="dropdown-item" href="consultation.html">Consultation</a></li>
-                                <li><a class="dropdown-item" href="health.html">Check-up Packages</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
+               <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="service.html" class="dropdown-item">Diagnostics Services</a>
+                            <!-- <a href="#" class="dropdown-item">Dr. Consultation</a> -->
+                            <a href="health.html" class="dropdown-item">Medical Check up Packages</a>
+                        </div>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="#" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex">
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </nav>
         </div>
