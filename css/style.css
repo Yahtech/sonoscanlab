@@ -1043,6 +1043,33 @@ service-img {
     transform: scale(1.1);
     transition: 0.3s ease-in-out;
   }
+   /* Topbar with Slogan - Updated */
+        .container-fluid.py-2.d-none.d-lg-flex.bg-light {
+            background: #f8f9fa !important;
+            padding: 12px 0 !important;
+        }
+        
+        .topbar-slogan {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .slogan-text {
+            color: #1a76d1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1.4;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .topbar-time {
+            color: #666;
+            font-size: 0.95rem;
+        }
 /* Whatsapp */
   .whatsapp-float {
         position: fixed;

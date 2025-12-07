@@ -523,6 +523,33 @@
                 font-size: 16px;
             }
         }
+         /* Topbar with Slogan - Updated */
+        .container-fluid.py-2.d-none.d-lg-flex.bg-light {
+            background: #f8f9fa !important;
+            padding: 12px 0 !important;
+        }
+        
+        .topbar-slogan {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .slogan-text {
+            color: #1a76d1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1.4;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .topbar-time {
+            color: #666;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 
@@ -603,6 +630,23 @@
                 </div>
             </nav>
         </div>
+        <!-- Topbar Start with Slogan - Updated -->
+    <div class="container-fluid py-2 d-none d-lg-flex bg-light">
+        <div class="container">
+            <div class="topbar-slogan">
+                <div class="slogan-text">Sonoscan...a continuous strive for excellence...</div>
+                <div class="topbar-time">
+                    <small><i class="fa fa-clock me-2"></i>24/7 Services Available</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Mobile Slogan (for tablets and phones) -->
+    <div class="mobile-slogan">
+        <div class="slogan-text">Sonoscan...a continuous strive for excellence...</div>
+    </div>
     </div>
     <!-- Navbar End -->
 

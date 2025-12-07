@@ -50,6 +50,34 @@
             margin: 0 auto;
         }
         
+        /* Topbar with Slogan - Updated */
+        .container-fluid.py-2.d-none.d-lg-flex.bg-light {
+            background: #f8f9fa !important;
+            padding: 12px 0 !important;
+        }
+        
+        .topbar-slogan {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .slogan-text {
+            color: #1a76d1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1.4;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .topbar-time {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
         /* Blog Hero Section */
         .blog-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/medical-banner.jpg');
@@ -189,6 +217,16 @@
             text-align: justify;
         }
         
+        /* Hide all paragraphs beyond the first 3 initially */
+        .post-excerpt p:nth-child(n+4) {
+            display: none;
+        }
+        
+        /* Show all paragraphs when expanded */
+        .post-excerpt.expanded p {
+            display: block !important;
+        }
+        
         .post-excerpt strong {
             color: #2c3e50;
             font-weight: 600;
@@ -198,6 +236,47 @@
             margin-bottom: 10px;
             display: block;
             content: "";
+        }
+        
+        /* Read More Button - Border removed */
+        .read-more-btn {
+            display: inline-block;
+            background: #1a76d1;
+            color: white;
+            border: none; /* Border removed as requested */
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 15px 0 25px 0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            outline: none; /* Remove focus outline */
+        }
+        
+        .read-more-btn:hover {
+            background: #155a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 118, 209, 0.3);
+        }
+        
+        .read-more-btn:focus {
+            outline: none; /* Remove focus outline */
+        }
+        
+        .read-more-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .read-more-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        .read-more-btn.hidden {
+            display: none;
         }
         
         /* Reaction Buttons */
@@ -356,6 +435,10 @@
                 padding: 40px 20px;
                 margin: 50px 0;
             }
+            
+            .slogan-text {
+                font-size: 1rem;
+            }
         }
         
         @media (max-width: 767px) {
@@ -392,6 +475,12 @@
             
             .post-excerpt p {
                 text-align: left;
+            }
+            
+            .read-more-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                margin: 12px 0 20px 0;
             }
             
             .newsletter-section {
@@ -479,6 +568,11 @@
                 line-height: 1.6;
             }
             
+            .read-more-btn {
+                padding: 8px 18px;
+                font-size: 0.9rem;
+            }
+            
             .newsletter-content h3 {
                 font-size: 1.4rem;
             }
@@ -505,6 +599,11 @@
                 font-size: 0.85rem;
             }
             
+            .read-more-btn {
+                padding: 7px 16px;
+                font-size: 0.85rem;
+            }
+            
             .reaction-btn {
                 min-width: 65px;
                 padding: 5px 10px;
@@ -528,6 +627,11 @@
             }
             
             .post-excerpt {
+                font-size: 0.8rem;
+            }
+            
+            .read-more-btn {
+                padding: 6px 14px;
                 font-size: 0.8rem;
             }
             
@@ -622,6 +726,30 @@
                 hyphens: auto;
             }
         }
+        
+        /* Mobile slogan in header */
+        .mobile-slogan {
+            display: none;
+            text-align: center;
+            padding: 10px 15px;
+            background: #f0f7ff;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .mobile-slogan .slogan-text {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 991px) {
+            .mobile-slogan {
+                display: block;
+            }
+            
+            .container-fluid.py-2.d-none.d-lg-flex.bg-light {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -636,18 +764,6 @@
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
     </div>
-
-    <!-- Topbar Start -->
-    <div class="container-fluid py-2 d-none d-lg-flex bg-light">
-        <div class="container">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <small><i class="fa fa-clock me-2"></i>24/7 Services Available</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
 
     <!-- Brand Start -->
     <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
@@ -705,7 +821,23 @@
                     </div>
                 </div>
             </nav>
+              <!-- Topbar Start with Slogan - Updated -->
+    <div class="container-fluid py-2 d-none d-lg-flex bg-light">
+        <div class="container">
+            <div class="topbar-slogan">
+                <div class="slogan-text">Sonoscan...a continuous strive for excellence...</div>
+                <div class="topbar-time">
+                    <small><i class="fa fa-clock me-2"></i>24/7 Services Available</small>
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Mobile Slogan (for tablets and phones) -->
+    <div class="mobile-slogan">
+        <div class="slogan-text">Sonoscan...a continuous strive for excellence...</div>
+    </div>
     </div>
     <!-- Navbar End -->
 
@@ -724,8 +856,8 @@
             <div class="col-lg-12">
                 <div class="blog-posts">
                     
-                    <!-- Blog Post 1 - Diabetes Prevention -->
-<article class="blog-post">
+                    <!-- Blog Post 1 - Medical Checkup -->
+                    <article class="blog-post">
                         <div class="post-header">
                             <h2 class="post-title">Why Do You Need Routine Medical Check Up?</h2>
                             <div class="post-meta">
@@ -743,6 +875,9 @@
                                 <p>Finally, check ups reduce your spending on healthcare issues since it is cheaper to prevent diseases than treating and managing chronic and complicated disease states. In addition check up provides you the opportunity for building trusting relationship between you and your Healthcare providers who can create for you a personalized health care plan based on your unique lifestyle and risk factors.</p>
                                 <p>Need a medical check up? Visit any of our offices today.</p>
                             </div>
+                            <button class="read-more-btn" data-post="checkup">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="checkup">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -774,6 +909,9 @@
                                 <p>Other complications of hypertension include heart failure (either from a weakened heart muscle or by a sudden heart attack) and aneurysms (bulging and possible rupture of arteries).</p>
                                 <p>Checking your blood pressure regularly could do you a whole world of good as they say.</p>
                             </div>
+                            <button class="read-more-btn" data-post="hypertension">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="hypertension">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -801,6 +939,9 @@
                                 <p>Common prostate symptoms include frequent or urgent urination, especially at night, and difficulty starting or maintaining a urine stream. Other symptoms can be pain or burning during urination, blood in the urine or semen, and painful ejaculation. Some men may also experience pain or stiffness in the lower back, hips, or thighs. It is important to see a doctor for any of these symptoms, as they may be caused by various prostate conditions, including cancer.</p>
                                 <p>Keeping your prostate healthy involves regular screenings, a healthy diet with fruits and vegetables, regular exercise, and avoiding tobacco. A diet rich in healthy fats, and low in saturated and trans fats, is beneficial. It's also important to consult a doctor for age-appropriate screenings and to address any urinary or sexual concerns.</p>
                             </div>
+                            <button class="read-more-btn hidden" data-post="prostate-health">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="prostate-health">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -831,6 +972,9 @@
                                 <p>Fatty liver disease progresses through four stages: fatty liver (steatosis), where fat builds up with no damage; metabolic dysfunction-associated steatohepatitis (MASH), which involves fat accumulation and inflammation; fibrosis, where inflammation causes scarring; and cirrhosis, the final stage of severe, irreversible liver scarring.</p>
                                 <p>Treatment often involves lifestyle changes like weight loss, exercise, and dietary improvements. Early stages can be reversed with lifestyle changes, but advanced stages lead to serious complications like liver failure.</p>
                             </div>
+                            <button class="read-more-btn" data-post="fatty-liver">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="fatty-liver">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -859,6 +1003,9 @@
                                 <p>To prevent peptic ulcer disease, avoid smoking and excessive alcohol, use NSAIDs (like aspirin and ibuprofen) carefully, and treat H. pylori infections. Taking NSAIDs with food and talking to your doctor about long-term use or alternatives can also help reduce risk.</p>
                                 <p>Get tested and treated for H. pylori: The bacteria is a common cause of ulcers, and most people don't know they have it. Regular check-ups are important for early detection and management of risk factors for PUD.</p>
                             </div>
+                            <button class="read-more-btn hidden" data-post="peptic-ulcer">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="peptic-ulcer">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -895,6 +1042,9 @@
                                 .. Liver cancer... Hepatitis B and C screening, liver ultrasound, AFP<br>
                                 ... Lung cancer... Chest Xray</p>
                             </div>
+                            <button class="read-more-btn" data-post="cancer-screening">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="cancer-screening">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -922,6 +1072,9 @@
                                 <p>Women with this condition experience irregular menstruation and sometimes difficulties in getting pregnant. Some women with this medical condition may also have masculine hair growth especially facial, abdominal and leg hairs.</p>
                                 <p>The diagnosis is confirmed by doing a transvaginal ultrasound scan which confirms the polycystic ovaries. And also some hormonal and metabolic tests that help to establish the diagnosis. This condition is treatable including the fertility challenges, the menstrual irregularity and the abnormal body hair growths. For further information, please chat us up on the WhatsApp portal or visit any of our offices.</p>
                             </div>
+                            <button class="read-more-btn hidden" data-post="pcos">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="pcos">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -933,7 +1086,7 @@
                         </div>
                     </article>
                     
-                    <!-- Blog Post 8 - Health Check-ups -->
+                    <!-- Blog Post 8 - Diabetes Prevention -->
                     <article class="blog-post">
                         <div class="post-header">
                             <h2 class="post-title">How to Prevent Diabetes</h2>
@@ -949,6 +1102,9 @@
                                 <p>Over the long term diabetic patients are at risk of different complications. These can include heart attack, stroke, chronic kidney disease, vision loss, nerve damage (neuropathy), and foot ulcers, which may lead to cutting the legs off. Other complications include skin and mouth conditions, hearing impairment, and an increased risk of dementia (memory impairment) and certain bone diseases.</p>
                                 <p>To PREVENT DIABETES, you need to set a healthy lifestyle as a priority by maintaining a healthy weight, getting at least two and half hours of moderate physical activity per week, and eating a balanced diet low in sugar and saturated fat. Other key steps include managing stress, getting enough sleep, limiting alcohol, and quitting smoking. Always remember that prevention is better than cure!</p>
                             </div>
+                            <button class="read-more-btn hidden" data-post="diabetes-prevention">
+                                Read More <i class="fas fa-chevron-down"></i>
+                            </button>
                             <div class="post-reactions">
                                 <button class="reaction-btn like-btn" data-post="diabetes-prevention">
                                     <i class="far fa-thumbs-up"></i> <span class="reaction-count">0</span>
@@ -1178,6 +1334,38 @@
                     top: 0,
                     behavior: 'smooth'
                 });
+            });
+            
+            // Read More functionality
+            const readMoreButtons = document.querySelectorAll('.read-more-btn');
+            
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const postId = this.getAttribute('data-post');
+                    const excerpt = this.previousElementSibling;
+                    
+                    if (excerpt.classList.contains('expanded')) {
+                        // Collapse the content
+                        excerpt.classList.remove('expanded');
+                        this.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                        this.classList.remove('expanded');
+                        
+                        // Scroll to the button position
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        // Expand the content
+                        excerpt.classList.add('expanded');
+                        this.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+                        this.classList.add('expanded');
+                    }
+                });
+                
+                // Check if button should be hidden (posts with 3 or fewer paragraphs)
+                const excerpt = button.previousElementSibling;
+                const paragraphs = excerpt.querySelectorAll('p');
+                if (paragraphs.length <= 3) {
+                    button.classList.add('hidden');
+                }
             });
             
             // Initialize reactions on page load
